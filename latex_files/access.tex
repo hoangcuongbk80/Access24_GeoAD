@@ -1,0 +1,139 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+\usepackage[ruled,noend,linesnumbered]{algorithm2e}
+\usepackage{graphicx,color,psfrag}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bigdelim}
+\usepackage{dsfont}
+\usepackage{color, soul}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{array,multirow,graphicx}
+\usepackage{makecell}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.20xx.0000000}
+
+\title{Unsupervised geometric-aware industrial anomaly detection with transformers}
+
+\author{\uppercase{Dinh-Cuong Hoang}\authorrefmark{1},
+\uppercase{Phan Xuan Tan}\authorrefmark{2},
+\uppercase{Anh-Nhat Nguyen}\authorrefmark{3},
+\uppercase{Duc-Thanh Tran}\authorrefmark{3}
+\uppercase{Van-Hiep Duong}\authorrefmark{3},
+\uppercase{Anh-Truong Mai}\authorrefmark{3},
+\uppercase{Duc-Long Pham}\authorrefmark{3},
+\uppercase{Khanh-Toan Phan}\authorrefmark{3},
+\uppercase{Xuan-Tung Dinh}\authorrefmark{3},
+\uppercase{Tran Thi Thuy Trang}\authorrefmark{3},
+\uppercase{Xuan-Duong Pham}\authorrefmark{3},
+\uppercase{Nhat-Linh Nguyen}\authorrefmark{3},
+\uppercase{Viet-Anh Trinh}\authorrefmark{1},
+\uppercase{Khanh-Duong Tran}\authorrefmark{1}, and
+\uppercase{Son-Anh Bui}\authorrefmark{1}}
+
+\address[1]{Greenwich Vietnam, FPT University, Hanoi, 10000, Vietnam}
+\address[2]{College of Engineering, Shibaura Institute of Technology, Tokyo 135-8548, Japan}
+\address[3]{IT Department, FPT University, Hanoi, 10000, Vietnam}
+
+%\tfootnote{This paragraph of the first footnote will contain support
+%information, including sponsor and financial support acknowledgment. For
+%example, ``This work was supported in part by the U.S. Department of
+%Commerce under Grant BS123456.''}
+
+\markboth
+{P. X. Tan \headeretal: Geometric-aware industrial anomaly detection}
+{P. X. Tan \headeretal: Geometric-aware industrial anomaly detection}
+
+\corresp{Corresponding author: Xuan-Tan Phan (e-mail: tanpx@shibaura-it.ac.jp).}
+
+
+\begin{abstract}
+
+Industrial anomaly detection involves identifying abnormal regions in products and plays a crucial role in quality inspection. While 2D image-based anomaly detection has been extensively explored, combining two-dimensional (2D) images with three-dimensional (3D) point clouds remains less studied. Existing multimodal methods often combine features from different modalities, leading to feature interference and degraded performance. To overcome this, we propose a novel framework for unsupervised industrial anomaly detection that leverages both visual and geometric information. Specifically, we use pre-trained 2D and 3D models to extract visual features from color images and geometric features from 3D point clouds. Instead of directly fusing these features, we propose a geometric feature reconstruction network that predicts 3D geometric features from the 2D visual features. During training, we minimize the difference between the predicted geometric features and the original geometric features, enabling the model to learn how 2D appearance correlates with 3D structure in normal objects. This approach enhances the model's sensitivity to deviations during inference, as significant discrepancies between predicted and actual geometric features indicate anomalies. Evaluated on the MVTec 3D-AD dataset, our method achieves state-of-the-art performance with an average image-level AUROC score of 0.968, surpassing previous approaches. Additionally, it provides fast inference at 8.2 frames per second with a memory footprint of only 1045 MB, making it highly efficient for industrial applications. 
+
+\end{abstract}
+
+\begin{keywords}
+Industrial anomaly detection, image-based anomaly detection, 3D point clouds.
+\end{keywords}
+
+\titlepgskip=-21pt
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Introduction} 
+%
+\input{RelatedWork}
+%
+\input{Method}
+%
+\input{Results}
+%
+\bibliographystyle{IEEEtran}
+\bibliography{References}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/prof_Tan}}]{Phan Xuan Tan} (Member, IEEE) received the B.E. degree in Electrical-Electronic Engineering from Military Technical Academy, Vietnam, M.E. degree in Computer and Communication Engineering from Hanoi University of Science and Technology, Vietnam and Ph.D. degree in Functional Control Systems from Shibaura Institute of Technology, Japan. He is currently an Associate Professor at Shibaura Institute of Technology. His current research interests include computer vision, deep learning and image processing.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/DinhCuong}}]{Dinh-Cuong Hoang} received his Ph.D. degree in computer science from Orebro University, Sweden (2021), and is currently a lecturer at FPT University, Greenwich Vietnam. His research interests lie at the intersection of computer vision, robotics, and machine learning. He is particularly interested in topics involving autonomy for robots, with a focus on perception algorithms.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/NguyenAnhNhat}}]{Anh-Nhat Nguyen}  is currently a lecturer at FPT University, Vietnam. He received his B.S. and M.S. degrees in Computer Science from Duy Tan University, Da Nang, Vietnam, in 2012 and from Huazhong University of Science and Technology (HUST), China, in 2018, respectively. His research interests include image processing, information security, physical layer secrecy, radio-frequency energy harvesting, and wireless sensor networks.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/TranDucThanh}}]{Duc-Thanh Tran} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/DuongVanHiep}}]{Van-Hiep Duong} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/MaiAnhTruong}}]{Anh-Truong Mai} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/PhamDucLong}}]{Duc-Long Pham} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/PhanKhanhToan}}]{Khanh-Toan Phan} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/DuongVanHiep}}]{Van-Hiep Duong} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/DinhXuanTung}}]{Xuan-Tung Dinh} is pursuing a B.S. degree in Artificial Intelligence at FPT University, Hanoi, Vietnam, with a primary focus on research in the field of computer vision.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/TranThiThuyTrang}}]{TranThiThuyTrang} is pursuing a B.S. degree in Information Technology at FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/PhamXuanDuong}}]{Xuan-Duong Pham} is pursuing a B.S. degree in Information Technology at FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/NguyenNhatLinh}}]{Nhat-Linh Nguyen} is pursuing a B.S. degree in Information Technology at FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/TrinhVietAnh}}]{Viet-Anh Trinh} is pursuing a B.S. degree in Information Technology at Greenwich Vietnam, FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/TranKhanhDuong}}]{Khanh-Duong Tran} is pursuing a B.S. degree in Information Technology at Greenwich Vietnam, FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{authors/BuiSonAnh}}]{Son-Anh Bui} is pursuing a B.S. degree in Information Technology at Greenwich Vietnam, FPT University, Hanoi, Vietnam.
+\end{IEEEbiography}
+
+\EOD
+
+\end{document}
