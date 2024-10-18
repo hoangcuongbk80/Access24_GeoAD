@@ -37,13 +37,11 @@
 \citation{qi2017pointnet}
 \citation{wang2023multimodal}
 \citation{dosovitskiy2020image}
-\citation{te2020edge,wang2018non}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the proposed unsupervised anomaly detection framework. The method extracts 2D visual features from RGB images and 3D geometric features from point clouds. A Visual-to-Geometric Feature Reconstruction network predicts geometric features from visual inputs, and significant discrepancies indicate anomalies.\relax }}{4}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:view}{{1}{4}}
+\citation{te2020edge,wang2018non}
 \citation{te2020edge}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The proposed visual feature enhancement module $\mathcal  {M}_{FE}$ used in geometric feature reconstruction. The module improves local feature representation through non-local attention and graph convolutional networks.\relax }}{5}{}\protected@file@percent }
-\newlabel{fig:NL}{{2}{5}}
 \citation{wang2023multimodal}
 \citation{wang2023multimodal}
 \citation{bergmann2022mvtec}
@@ -57,6 +55,8 @@
 \citation{chang2015shapenet}
 \citation{qi2017pointnet++}
 \citation{kingma2014adam}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The proposed visual feature enhancement module $\mathcal  {M}_{FE}$ used in geometric feature reconstruction. The module improves local feature representation through non-local attention and graph convolutional networks.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:NL}{{2}{6}}
 \newlabel{sec:evaluation}{{}{6}}
 \citation{bergmann2022mvtec,wang2023multimodal}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Qualitative results of anomaly detection. From top to bottom: input RGB images, point clouds, ground-truth anomaly segmentations, anomaly maps from \cite  {wang2023multimodal}, and anomaly maps obtained with our proposed method.\relax }}{7}{}\protected@file@percent }
@@ -115,12 +115,12 @@
 \bibcite{yu2023unsupervised}{6}
 \bibcite{liu2020towards}{7}
 \bibcite{bergmann2020uninformed}{8}
-\bibcite{salehi2021multiresolution}{9}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  AUPRO score for anomaly localization of all categories of MVTec-3D. Results of FPFH \cite  {horwitz2022empirical}, CFlow \cite  {gudovskiy2022cflow}, PatchCore \cite  {roth2022towards}, PADiM \cite  {defard2021padim}, 3D-ST \cite  {bergmann2023anomaly}, M3DM \cite  {wang2023multimodal} are obtained from \cite  {wang2023multimodal}, and the remaining methods from \cite  {bergmann2022mvtec}. Best results in {\fontencoding  {T1}\fontseries  {b}\selectfont  {b}old}, runner-ups \underline  {underlined}.\relax }}{10}{}\protected@file@percent }
 \newlabel{tab:2}{{2}{10}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces  Comparison of anomaly detection performance, inference speed, and memory usage on the MVTec 3D-AD dataset. AUPRO(0.3) and AUPRO(0.05) represent area under the per-region overlap curve with False Positive Rate (FPR) thresholds of 0.3 and 0.05, respectively. Frame rate is measured in frames per second (FPS), and memory usage refers to the memory footprint during inference. Ours (-$\mathcal  {M}_{FE}$) refers to our method without the visual feature enhancement module.\relax }}{10}{}\protected@file@percent }
 \newlabel{tab:extra_results}{{3}{10}}
 \@writefile{toc}{\contentsline {section}{REFERENCES}{10}{}\protected@file@percent }
+\bibcite{salehi2021multiresolution}{9}
 \bibcite{wang2021student}{10}
 \bibcite{cao2022informative}{11}
 \bibcite{bergmann2023anomaly}{12}
