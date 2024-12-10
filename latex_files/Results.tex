@@ -8,15 +8,96 @@
 \includegraphics[width=\linewidth]{figs/result_gt}
 \includegraphics[width=\linewidth]{figs/result_baseline}
 \includegraphics[width=\linewidth]{figs/result_ours}
+\vspace{-0.5cm}
+
+\begin{flushleft}
+ \hspace{1.3cm} Crack \hspace{2.6cm} Cut  \hspace{2.6cm} Crack  \hspace{2.8cm} Cut  \hspace{2.5cm} Cut
+ \end{flushleft}
+ 
+ \vspace{-0.1cm}
 \caption{Qualitative results of anomaly detection. From top to bottom: input RGB images, point clouds, ground-truth anomaly segmentations, and anomaly maps obtained by our proposed method without and with the visual feature enhancement module $\mathcal{M}_{FE}$. With $\mathcal{M}_{FE}$, the anomaly is accurately located in row 5.}
-\label{fig:results}
+\label{fig:results1}
 \end{figure*}
+%-----------------------------------------------
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.195\linewidth]{figs/result/carot_rgb}
+\includegraphics[width=0.195\linewidth]{figs/result/dowel_rgb}
+\includegraphics[width=0.195\linewidth]{figs/result/foam_rgb}
+\includegraphics[width=0.195\linewidth]{figs/result/potato_rgb}
+\includegraphics[width=0.195\linewidth]{figs/result/tire_rgb}
+\vspace{0.2cm}
+
+\includegraphics[width=0.195\linewidth]{figs/result/carot_pc}
+\includegraphics[width=0.195\linewidth]{figs/result/dowel_pc}
+\includegraphics[width=0.195\linewidth]{figs/result/foam_pc}
+\includegraphics[width=0.195\linewidth]{figs/result/potato_pc}
+\includegraphics[width=0.195\linewidth]{figs/result/tire_pc}
+\vspace{0.2cm}
+
+\includegraphics[width=0.195\linewidth]{figs/result/carot_gt}
+\includegraphics[width=0.195\linewidth]{figs/result/dowel_gt}
+\includegraphics[width=0.195\linewidth]{figs/result/foam_gt}
+\includegraphics[width=0.195\linewidth]{figs/result/potato_gt}
+\includegraphics[width=0.195\linewidth]{figs/result/tire_gt}
+\vspace{0.2cm}
+
+\includegraphics[width=0.195\linewidth]{figs/result/carot_bl}
+\includegraphics[width=0.195\linewidth]{figs/result/dowel_bl}
+\includegraphics[width=0.195\linewidth]{figs/result/foam_bl}
+\includegraphics[width=0.195\linewidth]{figs/result/potato_bl}
+\includegraphics[width=0.195\linewidth]{figs/result/tire_bl}
+\vspace{0.2cm}
+
+\includegraphics[width=0.195\linewidth]{figs/result/carot_ours}
+\includegraphics[width=0.195\linewidth]{figs/result/dowel_ours}
+\includegraphics[width=0.195\linewidth]{figs/result/foam_ours}
+\includegraphics[width=0.195\linewidth]{figs/result/potato_ours}
+\includegraphics[width=0.195\linewidth]{figs/result/tire_ours}
+\vspace{-0.1cm}
+\begin{flushleft}
+ \hspace{1.5cm} Hole \hspace{2.6cm} Bent  \hspace{2.6cm} Cut  \hspace{2.5cm} Hole and Cut  \hspace{1.5cm} Contamination
+ \end{flushleft} 
+
+\vspace{-0.1cm}
+\caption{Additional qualitative results of anomaly detection. From top to bottom: input RGB images, point clouds, ground-truth anomaly segmentations, and anomaly maps obtained by our proposed method without and with the visual feature enhancement module $\mathcal{M}_{FE}$. With $\mathcal{M}_{FE}$, the anomaly is accurately located in row 5.}
+\label{fig:results2}
+\end{figure*}
+%---------------------------------------------
 
 \subsection*{Experimental Details}
 
-\textbf{Dataset.}  Most existing industrial anomaly detection datasets provides 2D RGB images without corresponding 3D point cloud data. In contrast, 3D industrial anomaly detection is still in its early stages. The MVTec 3D-AD dataset \cite{bergmann2022mvtec} is the first 3D dataset for industrial anomaly detection. Following previous works \cite{wang2023multimodal}, we conduct our experiments on this dataset, which is designed to reflect real-world industrial inspection scenarios. The dataset includes 10 categories of industrial objects, comprising 2656 training samples, 294 validation samples, and 1197 test samples. The 3D scans were captured using a structured light-based industrial sensor, where the position information is stored in three-channel tensors representing x, y, and z coordinates. Each sample includes both RGB images and pixel-registered 3D information, providing a rich dataset for experiments. The object categories vary from items with natural variations (e.g., bagels, carrots, peaches) to more rigid and structured items (e.g., cable glands, dowels). The test set contains simulated real-world defects such as scratches, dents, holes, contaminations, and deformations, with ground-truth annotations provided for each anomalous sample. \\
+\textbf{Dataset.}  Most existing industrial anomaly detection datasets provide only 2D RGB images without corresponding 3D point cloud data. In contrast, 3D industrial anomaly detection is still in its early stages. The MVTec 3D-AD dataset \cite{bergmann2022mvtec} is the first dataset designed specifically for industrial anomaly detection using 3D data. It consists of 4147 scans acquired by a high-resolution industrial 3D sensor (Zivid One+ Medium) under conditions similar to real-world inspection setups. The dataset includes 10 categories of industrial objects, comprising 2656 training samples, 294 validation samples, and 1197 test samples. The training and validation sets contain only anomaly-free scans, while the test set includes both anomaly-free and anomalous samples.  
 
-\noindent \textbf{Implementation Details\footnote{Our code and other materials are available at \url{https://github.com/hoangcuongbk80/GeoAD}}.} Following \cite{wang2023multimodal}, we apply the RANSAC algorithm \cite{fischler1981random} to estimate the background plane, discarding any points within a distance of 0.005 units. For feature extraction, we utilize frozen Transformers as in \cite{wang2023multimodal}. Specifically, we employ DINO ViT-B/8 \cite{dosovitskiy2020image} pre-trained on ImageNet \cite{deng2009imagenet} for visual feature extraction, and Point-MAE \cite{pang2022masked} pre-trained on ShapeNet \cite{chang2015shapenet} for geometric feature extraction. The visual feature extraction module processes RGB images of resolution $224 \times 224$, producing a $28 \times 28 \times 768$ feature map, which is then upsampled to $224 \times 224 \times 768$ using bilinear interpolation before being passed to the geometric feature reconstruction module. For the point cloud data, we sample 1024 groups of 32 points using Farthest Point Sampling (FPS) \cite{qi2017pointnet++}, yielding a $1152$-dimensional feature vector for each group. These feature vectors are interpolated and aligned to a $224 \times 224 \times 1152$ grid, which serves as the target geometric feature map for reconstruction. The geometric feature reconstruction module is composed of three fully connected layers with GeLU activation functions applied after the first two layers. The layers have 768, 960, and 1152 units, respectively. We train the network for 200 epochs using the Adam optimizer \cite{kingma2014adam} with a learning rate of 0.001. All experiments are conducted on a single NVIDIA GeForce RTX 4090 GPU, utilizing both our implementation and the original authors' code for comparison. \\
+The anomalies in the dataset include a wide range of real-world defect types, such as scratches, dents, contaminations, cracks, holes, and deformations. These defects were devised and fabricated to closely simulate actual defects encountered in industrial settings. For example, the bagel and cookie categories feature cracks, while the carrot exhibits a hole, and the peach and rope contain contaminations. Prototypical examples of anomalies from the dataset’s 41 distinct defect types are shown in \cite{bergmann2022mvtec}.  
+
+The dataset's 10 object categories can be grouped based on their properties:
+\begin{itemize}
+    \item \textit{Natural Variations:} Bagel, carrot, cookie, peach, and potato exhibit significant natural variations in shape, size, and texture.
+    \item \textit{Deformable Objects:} Foam, rope, and tire have standardized appearances but can easily deform.
+    \item \textit{Rigid Objects:} Cable gland and dowel are rigid and could, in principle, be inspected using CAD models, but the dataset is designed to test unsupervised methods that can handle all object types.
+\end{itemize}
+
+Each scan includes a pixel-aligned RGB image and a point cloud containing x, y, and z coordinates, which enables a one-to-one mapping between the 2D image and the 3D geometric data. The scans were cropped to a fixed rectangular domain to minimize background pixels while retaining sufficient margins for data augmentation techniques such as cropping, translation, and rotation. The preprocessing ensures consistency with real-world scenarios, where objects are typically positioned in predefined locations with controlled lighting. The acquisition setup features an indirect and diffuse light source, with the sensor statically mounted to maintain a consistent view for each object category. Calibration of internal camera parameters ensures precise projection of 3D points into their corresponding 2D pixel coordinates. This configuration not only aligns with real-world practices but also simplifies data augmentation and preprocessing. \\
+
+\noindent \textbf{Implementation Details\footnote{Our code and other materials are available at \url{https://github.com/hoangcuongbk80/GeoAD}}.} Following \cite{wang2023multimodal}, we apply the RANSAC algorithm \cite{fischler1981random} to estimate the background plane, discarding any points within a distance of 0.005 units. For feature extraction, we utilize frozen Transformers as in \cite{wang2023multimodal}. Specifically, we employ DINO ViT-B/8 \cite{dosovitskiy2020image} pre-trained on ImageNet \cite{deng2009imagenet} for visual feature extraction, and Point-MAE \cite{pang2022masked} pre-trained on ShapeNet \cite{chang2015shapenet} for geometric feature extraction. 
+
+The visual feature extraction module processes RGB images of resolution $224 \times 224$, dividing them into non-overlapping patches of size $8 \times 8$. Each patch is flattened and passed through a linear embedding layer, resulting in a $768$-dimensional feature vector per patch. The embedded patches are fed into a Vision Transformer encoder comprising 12 layers of self-attention and feedforward blocks. This produces a $28 \times 28 \times 768$ feature map, which is subsequently upsampled using bilinear interpolation to $224 \times 224 \times 768$ for spatial alignment with the geometric features. Bilinear interpolation uses a scale factor dynamically computed based on the input and output resolutions.
+
+For the point cloud data, we sample 1024 groups of 32 points using Farthest Point Sampling (FPS) \cite{qi2017pointnet++}, followed by K-Nearest Neighbors (KNN) to define local neighborhoods for each sampled point. Each group is processed through a Masked Autoencoder (Point-MAE) \cite{pang2022masked} to generate a $1152$-dimensional geometric feature vector. These features are interpolated and aligned to a $224 \times 224 \times 1152$ grid using the pixel correspondence between the depth image and the RGB image.
+
+The Visual-to-Geometric Feature Reconstruction module is designed to map the visual features ($224 \times 224 \times 768$) to the geometric feature map ($224 \times 224 \times 1152$). This module begins by refining the visual features using the visual feature enhancement module $\mathcal{M}_{FE}$, which combines non-local attention and graph convolutional networks (GCNs) to enhance both global and local feature interactions. Specifically:
+\begin{itemize}
+    \item \textbf{Non-Local Attention:} Visual tokens are passed through linear projection layers to compute query, key, and value matrices with dimensions of $384$ each, i.e., $d/2$ where $d = 768$. Attention weights are computed as described in Equation (4) of the paper, and the refined tokens are aggregated using adaptive average pooling with a kernel size of $2 \times 2$. This ensures efficient computation while preserving salient features.
+    \item \textbf{Graph Convolutional Networks (GCNs):} The adjacency matrix for the GCN is constructed dynamically based on cosine similarity between tokens, with a threshold of 0.6 to retain meaningful connections. A single-layer graph convolution propagates contextual information across connected nodes, using a ReLU activation for non-linearity. The GCN weight matrix $w_g$ has dimensions $8 \times 8$, corresponding to the patch size.
+\end{itemize}
+
+The refined visual features are reshaped into patch-based feature maps and bilinearly upsampled to match the original spatial resolution ($224 \times 224$). These features are then passed through a lightweight Multi-Layer Perceptron (MLP) comprising three fully connected layers with GeLU activation functions. The dimensions of the MLP layers are $768$, $960$, and $1152$, respectively. Dropout with a rate of $0.1$ is applied after each layer to prevent overfitting, and the final output is a predicted geometric feature map $\hat{\mathbf{F}}_{geo}$ aligned with the extracted geometric features $\mathbf{F}_{geo}$.
+
+\textbf{Training Details:} The network is trained for 200 epochs using the Adam optimizer \cite{kingma2014adam} with an initial learning rate of 0.001 and a cosine annealing scheduler. The training loss is the L2 reconstruction loss (Equation 6), which minimizes the Euclidean distance between the predicted and actual geometric features. A batch size of 16 is used to balance memory efficiency and convergence speed. Data augmentation techniques, including random cropping and rotation, are applied to enhance generalization.
+
+\textbf{Hardware and Software:} All experiments are conducted on a single NVIDIA GeForce RTX 4090 GPU with 24GB of memory. The implementation is based on PyTorch 2.0, and training runs are logged using the Weights and Biases library for performance monitoring. We also validate our results using the original authors' code for a fair comparison. \\
 
 \noindent \textbf{Evaluation Metrics.} Following \cite{bergmann2022mvtec, wang2023multimodal}, we employ two metrics: the Image-level Area Under the Receiver Operating Characteristic curve (I-AUROC) and the Area Under the Per-Region Overlap curve (AUPRO). These metrics provide insights into both anomaly classification and localization performance. I-AUROC is used to assess the model's ability to classify an entire test image as either anomaly-free or containing an anomaly. The AUROC curve is derived by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold levels. The I-AUROC score provides a threshold-independent evaluation of the model's classification performance, with a score of 1 indicating perfect classification. A higher I-AUROC score signifies better image-level anomaly detection performance. AUPRO evaluates the model's ability to localize anomalies within the test samples. AUPRO measures how well the predicted anomaly regions overlap with the ground truth at different thresholds, thus reflecting the model's localization accuracy. For each connected component \( C_k \) in the ground truth, the overlap between the binary prediction \( P \) and \( C_k \) is computed. The Per-Region Overlap (PRO) for each region is defined as:
 \begin{equation}
@@ -66,7 +147,7 @@ AUPRO is computed by integrating the PRO over a range of thresholds, typically u
 \end{table*}
 %/--------------------------------------------------------------------
 
-Figure \ref{fig:results} demonstrates the qualitative performance of our method on the MVTec 3D-AD dataset. In comparison to the baseline, our anomaly maps exhibit significantly sharper localization, aligning closely with the ground-truth defect regions. Table \ref{tab:1} presents the I-AUROC scores for various anomaly detection methods evaluated on the MVTec-3D AD dataset. The proposed method demonstrates good performance across most categories, achieving the highest mean I-AUROC score of 0.968. This performance highlights the model's superior ability to differentiate between normal and anomalous samples. The key reason behind this success lies in the visual-to-geometric feature reconstruction approach, which allows the model to predict geometric features from visual features, thereby learning complex correlations between appearance and structure in normal objects. In comparison to other methods, such as AST \cite{rudolph2023asymmetric} and M3DM \cite{wang2023multimodal}, the proposed model consistently outperforms in many object categories, including Cookie, Dowel, Foam, and Tire, achieving scores of 0.979, 0.984, 0.973, and 0.883, respectively. These high scores demonstrate the efficacy of the Visual-to-Geometric Feature Reconstruction network, which effectively learns the correlation between 2D visual features and 3D geometric features, allowing the model to be highly responsive to irregularities in both the appearance and structure of objects. However, the proposed method does not always perform better than certain RGB-only methods. For instance, in the Cable Gland category, the proposed method achieves an I-AUROC score of 0.922, whereas the RGB-based AST model attains a slightly higher score of 0.928. This discrepancy might be attributed to the nature of the cable gland object, which is characterized by complex geometry and reflective surfaces that can be difficult to accurately measure in 3D. The presence of intricate details and curved surfaces introduces noise and inaccuracies in the 3D point cloud data, leading to suboptimal feature reconstruction and anomaly detection. The RGB-only models, such as AST, is benefit in this case from focusing solely on visual information without the added complexity of geometric features, which might not be reliably captured.
+Figure \ref{fig:results1} and \ref{fig:results2} demonstrate the qualitative performance of our method on the MVTec 3D-AD dataset. In comparison to the baseline, our anomaly maps exhibit significantly sharper localization, aligning closely with the ground-truth defect regions. Table \ref{tab:1} presents the I-AUROC scores for various anomaly detection methods evaluated on the MVTec-3D AD dataset. The proposed method demonstrates good performance across most categories, achieving the highest mean I-AUROC score of 0.968. This performance highlights the model's superior ability to differentiate between normal and anomalous samples. The key reason behind this success lies in the visual-to-geometric feature reconstruction approach, which allows the model to predict geometric features from visual features, thereby learning complex correlations between appearance and structure in normal objects. In comparison to other methods, such as AST \cite{rudolph2023asymmetric} and M3DM \cite{wang2023multimodal}, the proposed model consistently outperforms in many object categories, including Cookie, Dowel, Foam, and Tire, achieving scores of 0.979, 0.984, 0.973, and 0.883, respectively. These high scores demonstrate the efficacy of the Visual-to-Geometric Feature Reconstruction network, which effectively learns the correlation between 2D visual features and 3D geometric features, allowing the model to be highly responsive to irregularities in both the appearance and structure of objects. However, the proposed method does not always perform better than certain RGB-only methods. For instance, in the Cable Gland category, the proposed method achieves an I-AUROC score of 0.922, whereas the RGB-based AST model attains a slightly higher score of 0.928. This discrepancy might be attributed to the nature of the cable gland object, which is characterized by complex geometry and reflective surfaces that can be difficult to accurately measure in 3D. The presence of intricate details and curved surfaces introduces noise and inaccuracies in the 3D point cloud data, leading to suboptimal feature reconstruction and anomaly detection. The RGB-only models, such as AST, is benefit in this case from focusing solely on visual information without the added complexity of geometric features, which might not be reliably captured.
 
 %/--------------------------------------------------------------------
 \begin{table*}[ht]

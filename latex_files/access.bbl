@@ -31,6 +31,27 @@ M.~Iturbe, I.~Garitano, U.~Zurutuza, and R.~Uribeetxeberria, ``Towards
   A survey of current trends,'' \emph{Security and Communication Networks},
   vol. 2017, no.~1, p. 9150965, 2017.
 
+\bibitem{prunella2023deep}
+M.~Prunella, R.~M. Scardigno, D.~Buongiorno, A.~Brunetti, N.~Longo, R.~Carli,
+  M.~Dotoli, and V.~Bevilacqua, ``Deep learning for automatic vision-based
+  recognition of industrial surface defects: a survey,'' \emph{IEEE Access},
+  vol.~11, pp. 43\,370--43\,423, 2023.
+
+\bibitem{ren2024steel}
+F.~Ren, J.~Fei, H.~Li, and B.~T. Doma, ``Steel surface defect detection using
+  improved deep learning algorithm: Eca-simsppf-siou-yolov5,'' \emph{IEEE
+  Access}, 2024.
+
+\bibitem{zhang2024defect}
+N.~Zhang, G.~Yang, D.~Wang, F.~Hu, H.~Yu, and J.~Fan, ``A defect detection
+  method for substation equipment based on image data generation and deep
+  learning,'' \emph{IEEE Access}, 2024.
+
+\bibitem{yang2019real}
+J.~Yang, S.~Li, Z.~Wang, and G.~Yang, ``Real-time tiny part defect detection
+  system in manufacturing using deep learning,'' \emph{IEEe Access}, vol.~7,
+  pp. 89\,278--89\,291, 2019.
+
 \bibitem{tao2022deep}
 X.~Tao, X.~Gong, X.~Zhang, S.~Yan, and C.~Adak, ``Deep learning for
   unsupervised anomaly localization in industrial images: A survey,''
@@ -74,8 +95,8 @@ M.~Salehi, N.~Sadjadi, S.~Baselizadeh, M.~H. Rohban, and H.~R. Rabiee,
 
 \bibitem{wang2021student}
 G.~Wang, S.~Han, E.~Ding, and D.~Huang, ``Student-teacher feature pyramid
-  matching for anomaly detection,'' \emph{arXiv preprint arXiv:2103.04257},
-  2021.
+  matching for anomaly detection,'' in \emph{The British Machine Vision
+  Conference (BMVC)}, 2021.
 
 \bibitem{cao2022informative}
 Y.~Cao, Q.~Wan, W.~Shen, and L.~Gao, ``Informative knowledge distillation for
@@ -120,7 +141,10 @@ P.~Perera, R.~Nallapati, and B.~Xiang, ``Ocgan: One-class novelty detection
 \bibitem{bergmann2018improving}
 P.~Bergmann, S.~L{\"o}we, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Improving
   unsupervised defect segmentation by applying structural similarity to
-  autoencoders,'' \emph{arXiv preprint arXiv:1807.02011}, 2018.
+  autoencoders,'' in \emph{Proceedings of the 14th International Joint
+  Conference on Computer Vision, Imaging and Computer Graphics Theory and
+  Applications}.\hskip 1em plus 0.5em minus 0.4em\relax SCITEPRESS-Science and
+  Technology Publications, 2019.
 
 \bibitem{chung2020unsupervised}
 H.~Chung, J.~Park, J.~Keum, H.~Ki, and S.~Kang, ``Unsupervised anomaly
@@ -136,28 +160,29 @@ K.~Zhou, Y.~Xiao, J.~Yang, J.~Cheng, W.~Liu, W.~Luo, Z.~Gu, J.~Liu, and S.~Gao,
 
 \bibitem{dehaene2020iterative}
 D.~Dehaene, O.~Frigo, S.~Combrexelle, and P.~Eline, ``Iterative energy-based
-  projection on a normal data manifold for anomaly localization,'' \emph{arXiv
-  preprint arXiv:2002.03734}, 2020.
-
-\bibitem{dehaene2020anomaly}
-D.~Dehaene and P.~Eline, ``Anomaly localization by modeling perceptual
-  features,'' \emph{arXiv preprint arXiv:2008.05369}, 2020.
+  projection on a normal data manifold for anomaly localization,'' in
+  \emph{International Conference on Learning Representations}, 2020.
 
 \bibitem{wang2020image}
 L.~Wang, D.~Zhang, J.~Guo, and Y.~Han, ``Image anomaly detection using normal
   data only by latent space resampling,'' \emph{Applied Sciences}, vol.~10,
   no.~23, p. 8660, 2020.
 
+\bibitem{ganokratanaa2020unsupervised}
+T.~Ganokratanaa, S.~Aramvith, and N.~Sebe, ``Unsupervised anomaly detection and
+  localization based on deep spatiotemporal translation network,'' \emph{IEEE
+  Access}, vol.~8, pp. 50\,312--50\,329, 2020.
+
+\bibitem{ganokratanaa2022video}
+------, ``Video anomaly detection using deep residual-spatiotemporal
+  translation network,'' \emph{Pattern Recognition Letters}, vol. 155, pp.
+  143--150, 2022.
+
 \bibitem{yan2021learning}
 X.~Yan, H.~Zhang, X.~Xu, X.~Hu, and P.-A. Heng, ``Learning semantic context
   from normal samples for unsupervised anomaly detection,'' in
   \emph{Proceedings of the AAAI conference on artificial intelligence},
   vol.~35, no.~4, 2021, pp. 3110--3118.
-
-\bibitem{song2021anoseg}
-J.~Song, K.~Kong, Y.-I. Park, S.-G. Kim, and S.-J. Kang, ``Anoseg: Anomaly
-  segmentation network using self-supervised learning,'' \emph{arXiv preprint
-  arXiv:2110.03396}, 2021.
 
 \bibitem{liang2023omni}
 Y.~Liang, J.~Zhang, S.~Zhao, R.~Wu, Y.~Liu, and S.~Pan, ``Omni-frequency
@@ -197,10 +222,6 @@ C.~Hu, K.~Chen, and H.~Shao, ``A semantic-enhanced method based on deep svdd
   for pixel-wise anomaly detection,'' in \emph{2021 IEEE International
   Conference on Multimedia and Expo (ICME)}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2021, pp. 1--6.
-
-\bibitem{cohen2020sub}
-N.~Cohen and Y.~Hoshen, ``Sub-image anomaly detection with deep pyramid
-  correspondences,'' \emph{arXiv preprint arXiv:2005.02357}, 2020.
 
 \bibitem{li2021anomaly}
 N.~Li, K.~Jiang, Z.~Ma, X.~Wei, X.~Hong, and Y.~Gong, ``Anomaly detection via
@@ -263,6 +284,11 @@ X.~Wang, R.~Girshick, A.~Gupta, and K.~He, ``Non-local neural networks,'' in
   \emph{Proceedings of the IEEE conference on computer vision and pattern
   recognition}, 2018, pp. 7794--7803.
 
+\bibitem{defferrard2016convolutional}
+M.~Defferrard, X.~Bresson, and P.~Vandergheynst, ``Convolutional neural
+  networks on graphs with fast localized spectral filtering,'' \emph{Advances
+  in neural information processing systems}, vol.~29, 2016.
+
 \bibitem{bergmann2022mvtec}
 P.~Bergmann., X.~Jin., D.~Sattlegger., and C.~Steger., ``The mvtec 3d-ad
   dataset for unsupervised 3d anomaly detection and localization,'' in
@@ -286,8 +312,8 @@ J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei, ``Imagenet: A
 \bibitem{chang2015shapenet}
 A.~X. Chang, T.~Funkhouser, L.~Guibas, P.~Hanrahan, Q.~Huang, Z.~Li,
   S.~Savarese, M.~Savva, S.~Song, H.~Su \emph{et~al.}, ``Shapenet: An
-  information-rich 3d model repository,'' \emph{arXiv preprint
-  arXiv:1512.03012}, 2015.
+  information-rich 3d model repository,'' \emph{CoRR}, vol. abs/1512.03012,
+  2015.
 
 \bibitem{qi2017pointnet++}
 C.~R. Qi, L.~Yi, H.~Su, and L.~J. Guibas, ``Pointnet++: Deep hierarchical
@@ -295,8 +321,9 @@ C.~R. Qi, L.~Yi, H.~Su, and L.~J. Guibas, ``Pointnet++: Deep hierarchical
   information processing systems}, vol.~30, 2017.
 
 \bibitem{kingma2014adam}
-D.~P. Kingma, ``Adam: A method for stochastic optimization,'' \emph{arXiv
-  preprint arXiv:1412.6980}, 2014.
+D.~P. Kingma and J.~Ba, ``Adam: {A} method for stochastic optimization,'' in
+  \emph{3rd International Conference on Learning Representations, {ICLR} 2015,
+  San Diego, CA, USA, May 7-9, 2015, Conference Track Proceedings}, 2015.
 
 \bibitem{gudovskiy2022cflow}
 D.~Gudovskiy, S.~Ishizaka, and K.~Kozuka, ``Cflow-ad: Real-time unsupervised
