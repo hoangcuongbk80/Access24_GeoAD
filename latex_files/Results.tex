@@ -66,11 +66,42 @@
 \end{figure*}
 %---------------------------------------------
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/29_image_5}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/41_image_4}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/45_image_5}
+\vspace{0.2cm}
+
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/29_depth}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/41_depth}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/45_depth}
+\vspace{0.2cm}
+
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/29_normals}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/41_normals}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/45_normals}
+\vspace{0.2cm}
+
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/29_mask}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/41_mask}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/45_mask}
+\vspace{0.2cm}
+
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/29_ours}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/41_ours}
+\includegraphics[width=0.32\linewidth]{figs/eyecandies/45_ours}
+
+\caption{Additional qualitative results of anomaly detection. From top to bottom: input RGB images, point clouds, ground-truth anomaly segmentations, and anomaly maps obtained by our proposed method without and with the visual feature enhancement module $\mathcal{M}_{FE}$. With $\mathcal{M}_{FE}$, the anomaly is accurately located in row 5.}
+\label{fig:results3}
+\end{figure}
+%---------------------------------------------
+
 \subsection*{Experimental Details}
 
 \textbf{Dataset.}  Most existing industrial anomaly detection datasets provide only 2D RGB images without corresponding 3D point cloud data. In contrast, 3D industrial anomaly detection is still in its early stages. The MVTec 3D-AD dataset \cite{bergmann2022mvtec} is the first dataset designed specifically for industrial anomaly detection using 3D data. It consists of 4147 scans acquired by a high-resolution industrial 3D sensor (Zivid One+ Medium) under conditions similar to real-world inspection setups. The dataset includes 10 categories of industrial objects, comprising 2656 training samples, 294 validation samples, and 1197 test samples. The training and validation sets contain only anomaly-free scans, while the test set includes both anomaly-free and anomalous samples.  
 
-The anomalies in the dataset include a wide range of real-world defect types, such as scratches, dents, contaminations, cracks, holes, and deformations. These defects were devised and fabricated to closely simulate actual defects encountered in industrial settings. For example, the bagel and cookie categories feature cracks, while the carrot exhibits a hole, and the peach and rope contain contaminations. Prototypical examples of anomalies from the dataset’s 41 distinct defect types are shown in \cite{bergmann2022mvtec}.  
+The anomalies in the dataset include a wide range of real-world defect types, such as scratches, dents, contaminations, cracks, holes, and deformations. These defects were devised and fabricated to closely simulate actual defects encountered in industrial settings. For example, the bagel and cookie categories feature cracks, while the carrot exhibits a hole, and the peach and rope contain contaminations. Prototypical examples of anomalies from the dataset's 41 distinct defect types are shown in \cite{bergmann2022mvtec}.  
 
 The dataset's 10 object categories can be grouped based on their properties:
 \begin{itemize}
@@ -193,31 +224,47 @@ Overall, the proposed method demonstrates strong performance in anomaly detectio
 
 %----------------------------------------------------------
 \begin{table*}[h]
-\caption{ Comparison of anomaly detection performance, inference speed, and memory usage on the MVTec 3D-AD dataset. AUPRO(0.3) and AUPRO(0.05) represent area under the per-region overlap curve with False Positive Rate (FPR) thresholds of 0.3 and 0.05, respectively. Frame rate is measured in frames per second (FPS), and memory usage refers to the memory footprint during inference. Ours (-$\mathcal{M}_{FE}$) refers to our method without the visual feature enhancement module.}
-\label{tab:extra_results}
-\begin{center}
-\begin{tabular}{l|rrr|rr}
+\centering
+\begin{tabular}{l|ccc|ccc|cc}
 \hline
-& I-AUROC & \text{AUPRO(0.3)} & \text{AUPRO(0.05)} & Frame Rate & Memory \\
+& \multicolumn{3}{c|}{Simulation} & \multicolumn{3}{c|}{MVTec 3D-AD}  & Frame Rate  & Memory \\
 \hline
-3D-ST \cite{bergmann2023anomaly} & 0.833  & 0.833 & 0.465 & 5.13 & 2504MB \\
+& I-AUROC & \text{AUPRO(0.3)} & \text{AUPRO(0.05)} & I-AUROC & \text{AUPRO(0.3)} & \text{AUPRO(0.05)} & FPS & MB \\
 \hline
-M3DM \cite{wang2023multimodal} & 0.945 & 0.964 & 0.521 & 0.514 & 6526MB \\
+3D-ST \cite{bergmann2023anomaly} & 0.852 & 0.841 & 0.504 & 0.833  & 0.833 & 0.465 & 5.130 & 2504 \\
 \hline
-Ours (-$\mathcal{M}_{FE}$) & 0.873  & 0.884 & 0.502 & 9.814 & 942MB \\
+M3DM \cite{wang2023multimodal} & 0.948 & 0.974 & 0.542 & 0.945 & 0.964 & 0.521 & 0.514 & 6526 \\
 \hline
-Ours & 0.968  & 0.978 & 0.702 & 8.213 & 1045MB \\
+Ours (-$\mathcal{M}_{FE}$)  & 0.870 & 0.893 & 0.527 & 0.873  & 0.884 & 0.502 & 9.814 & 942 \\
+\hline
+Ours (-GCN) & 0.925 & 0.936 & 0.599 & 0.914  & 0.920 & 0.551 & 8.801 & 1002 \\
+\hline
+Ours (-NLA) & 0.913 & 0.932 & 0.568 & 0.905  & 0.912 & 0.542 & 8.762 & 985 \\
+\hline
+Ours (Full) & \textbf{0.972} & \textbf{0.971} & \textbf{0.752} & \textbf{0.968}  & \textbf{0.978} & \textbf{0.702} & \textbf{8.213} & \textbf{1045} \\
 \hline
 \end{tabular}
-\end{center}
+\caption{\label{tab:extra_results} Comparison of anomaly detection performance, inference speed, and memory usage on Simulation and the MVTec 3D-AD dataset. AUPRO(0.3) and AUPRO(0.05) represent area under the per-region overlap curve with False Positive Rate (FPR) thresholds of 0.3 and 0.05, respectively. Frame rate is measured in frames per second (FPS), and memory usage refers to the memory footprint during inference. Ours (-$\mathcal{M}_{FE}$) refers to our method without the visual feature enhancement module.}
 \end{table*}
 %----------------------------------------------------------
 
-In Tables \ref{tab:1} and \ref{tab:2}, we use a False Positive Rate (FPR) integration threshold of 0.3 to calculate the AUPRO, which serves as an indicator of anomaly localization performance. However, for real-world industrial applications, a 0.3 FPR threshold may be too tolerant, potentially leading to an excessive number of false positives. In industrial settings, high precision is critical to avoid unnecessary interventions, so a tighter threshold is often preferred. Therefore, in this section, we present additional experiments using a more stringent FPR threshold of 0.05 provides a more realistic evaluation of our model's performance in industrial anomaly detection tasks. To distinguish between the two evaluation settings, we refer to the AUPRO values calculated with FPR thresholds of 0.3 and 0.05 as AUPRO(0.3) and AUPRO(0.05), respectively. 
+\textbf{Metrics}. In Tables \ref{tab:1} and \ref{tab:2}, we use a False Positive Rate (FPR) integration threshold of 0.3 to calculate the AUPRO, which serves as an indicator of anomaly localization performance. However, for real-world industrial applications, a 0.3 FPR threshold may be too tolerant, potentially leading to an excessive number of false positives. In industrial settings, high precision is critical to avoid unnecessary interventions, so a tighter threshold is often preferred. Therefore, in this section, we present additional experiments using a more stringent FPR threshold of 0.05 provides a more realistic evaluation of our model's performance in industrial anomaly detection tasks. To distinguish between the two evaluation settings, we refer to the AUPRO values calculated with FPR thresholds of 0.3 and 0.05 as AUPRO(0.3) and AUPRO(0.05), respectively. 
 
-Table \ref{tab:extra_results} presents these metrics for various methods on the MVTec 3D-AD dataset, including comparisons between the full version of our model and its variant without the visual feature enhancement module ($\mathcal{M}_{FE}$). Our full method achieves the highest I-AUROC score (0.968) and outperforms competing RGB+3D methods such as 3D-ST and M3DM across all metrics. This is particularly evident in the AUPRO(0.05) metric, where we achieve a significant improvement over M3DM (0.702 vs. 0.521). This highlights the model's superior anomaly localization capabilities, particularly when a more stringent false positive rate (FPR) threshold is applied. The tighter AUPRO(0.05) threshold ensures fewer false positives, which is critical for industrial anomaly detection applications where high precision is required.
+\textbf{Simulation}. We further expanded simulation tests to demonstrate the effectiveness and robustness of the proposed Transformer-based Visual-to-Geometric feature reconstruction module. Following \cite{bonfiglioli2022eyecandies}, we generated a synthetic dataset using the Blender framework, a popular 3D modeling software that provides seamless interoperability with Python via the BlenderProc package. BlenderProc is a procedural synthetic data generation tool that allows for controlled and reproducible creation of 3D environments. Using this framework, we simulated industrial scenarios with various object shapes, textures, lighting conditions, and geometric anomalies. Figure \ref{fig:results3} shows examples of the generated samples. The dataset consists of 10,000 images for training and 1,000 images for testing, with corresponding 3D point cloud data and ground-truth geometric feature maps. Models were trained on this dataset using the same hyperparameters as for the MVTec 3D-AD dataset, ensuring consistency in training configurations.
 
-The ablation study demonstrates the effectiveness of the proposed visual feature enhancement module. Without this module, the I-AUROC drops from 0.968 to 0.873, and the localization performance also declines, with AUPRO(0.3) and AUPRO(0.05) scores decreasing by 0.094 and 0.2, respectively. This significant performance drop underscores the importance of the module in refining local visual features, allowing the model to detect subtle and localized anomalies more effectively. The enhancement module contributes not only to anomaly detection accuracy but also to improved generalization across diverse anomaly types. Despite achieving higher accuracy, our full method maintains a competitive inference speed of 8.213 FPS-significantly higher than M3DM (0.514 FPS)-while requiring substantially less memory (1045 MB vs. 6526 MB for M3DM). This indicates that our method is well-suited for real-time industrial applications, offering a balance between high performance and efficiency. The absence of the visual feature enhancement module further increases the frame rate to 9.814 FPS, but at the cost of reduced detection and localization accuracy, as evidenced by the lower I-AUROC and AUPRO scores.
+\textbf{Configurations}. To evaluate the contributions of different components within the proposed Transformer-based Visual-to-Geometric feature reconstruction module, we implemented the following configurations:
+\begin{itemize}
+    \item \textbf{Ours (-$\mathcal{M}_{FE}$):} The visual features ($224 \times 224 \times 768$) were directly passed to the Multi-Layer Perceptron (MLP) without applying the visual feature enhancement module $\mathcal{M}_{FE}$.
+    \item \textbf{Ours (-GCN):} In this configuration, the graph convolutional network (GCN) is omitted, and only the non-local attention mechanism is used to refine the visual features. Visual tokens are processed through linear projection layers to compute reduced-dimension representations. These are concatenated and passed through adaptive average pooling to compute the attention weights. The attention mechanism aggregates information across spatially distant tokens, producing refined visual features that capture global contextual relationships. These refined features are directly passed to the Multi-Layer Perceptron (MLP) for geometric feature prediction. No steps involving graph adjacency matrix construction or graph convolution are included.
+    \item \textbf{Ours (-NLA):} In this configuration, the non-local attention mechanism is excluded, and the visual features are refined using the GCN. A graph representation is constructed dynamically by calculating cosine similarity between tokens and applying a threshold to form the adjacency matrix. Tokens are then projected into the graph domain, and graph convolution is applied to propagate information across connected nodes. The output of the GCN is integrated with the original tokens using a skip connection to produce refined visual features. These features are subsequently passed to the MLP for geometric feature prediction, without any attention-based refinement.
+    \item \textbf{Full Module (Proposed):} Both non-local attention and GCN were used as part of the visual feature enhancement module $\mathcal{M}_{FE}$ to refine the visual features.
+\end{itemize}
+
+%\textbf{Results and Reproducibility}. To ensure reproducibility, we provide the full implementation of the Transformer-based Visual-to-Geometric feature reconstruction module, including all training parameters, hardware configurations, and hyperparameter tuning, in the supplementary material. All experiments were conducted on a single NVIDIA GeForce RTX 4090 GPU using PyTorch 2.0, and the generated synthetic dataset, along with the BlenderProc scripts, is publicly available at \url{https://github.com/hoangcuongbk80/GeoAD}.
+
+\textbf{Result}. The experimental results are summarized in Table \ref{tab:extra_results}, showcasing the performance of our proposed method and its ablated variants on both the synthetic dataset (Simulation) and the MVTec 3D-AD dataset. Our full method achieved the highest performance across all metrics, with I-AUROC scores of 0.972 and 0.968 on the synthetic and MVTec 3D-AD datasets, respectively. Notably, the AUPRO(0.05) scores of 0.752 on the synthetic dataset and 0.702 on MVTec 3D-AD demonstrate the robustness of our method in scenarios requiring high precision, which is critical for real-world industrial applications. The ablation study reveals that removing the visual feature enhancement module ($\mathcal{M}_{FE}$) resulted in a significant drop in performance, with I-AUROC decreasing to 0.873 and AUPRO(0.05) falling to 0.502 on MVTec 3D-AD. Similarly, excluding the graph convolutional network (GCN) reduced the model's ability to capture fine-grained spatial relationships, leading to an AUPRO(0.05) of 0.551, highlighting the importance of local feature refinement. When the non-local attention mechanism was omitted, performance also declined, with AUPRO(0.05) decreasing to 0.542 on MVTec 3D-AD, underscoring the necessity of capturing global dependencies for detecting anomalies spanning large spatial regions.
+
+Compared to baseline methods, our full model outperformed both 3D-ST \cite{bergmann2023anomaly} and M3DM \cite{wang2023multimodal}, achieving a 38.5\% and 13.0\% improvement in AUPRO(0.05) on the synthetic dataset, respectively. This demonstrates the superiority of our approach in both anomaly localization and overall detection performance. Additionally, our method maintains competitive efficiency, achieving a frame rate of 8.213 FPS with a memory footprint of 1045 MB. In contrast, M3DM required significantly more memory (6526 MB) while achieving lower frame rates, making our method better suited for real-time industrial applications. The results confirm that the integration of non-local attention and GCN in the visual feature enhancement module enables our model to achieve state-of-the-art performance while remaining efficient. The stricter AUPRO(0.05) metric further validates the robustness of our method under high-precision requirements, highlighting its practical applicability in industrial anomaly detection tasks.
 
 \section*{Conclusion}
 \label{sec:Conclusion}

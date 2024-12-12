@@ -272,13 +272,6 @@ C.~R. Qi, H.~Su, K.~Mo, and L.~J. Guibas, ``Pointnet: Deep learning on point
 A.~Dosovitskiy, ``An image is worth 16x16 words: Transformers for image
   recognition at scale,'' \emph{arXiv preprint arXiv:2010.11929}, 2020.
 
-\bibitem{te2020edge}
-G.~Te, Y.~Liu, W.~Hu, H.~Shi, and T.~Mei, ``Edge-aware graph representation
-  learning and reasoning for face parsing,'' in \emph{Computer Vision--ECCV
-  2020: 16th European Conference, Glasgow, UK, August 23--28, 2020,
-  Proceedings, Part XII 16}.\hskip 1em plus 0.5em minus 0.4em\relax Springer,
-  2020, pp. 258--274.
-
 \bibitem{wang2018non}
 X.~Wang, R.~Girshick, A.~Gupta, and K.~He, ``Non-local neural networks,'' in
   \emph{Proceedings of the IEEE conference on computer vision and pattern
@@ -288,6 +281,13 @@ X.~Wang, R.~Girshick, A.~Gupta, and K.~He, ``Non-local neural networks,'' in
 M.~Defferrard, X.~Bresson, and P.~Vandergheynst, ``Convolutional neural
   networks on graphs with fast localized spectral filtering,'' \emph{Advances
   in neural information processing systems}, vol.~29, 2016.
+
+\bibitem{te2020edge}
+G.~Te, Y.~Liu, W.~Hu, H.~Shi, and T.~Mei, ``Edge-aware graph representation
+  learning and reasoning for face parsing,'' in \emph{Computer Vision--ECCV
+  2020: 16th European Conference, Glasgow, UK, August 23--28, 2020,
+  Proceedings, Part XII 16}.\hskip 1em plus 0.5em minus 0.4em\relax Springer,
+  2020, pp. 258--274.
 
 \bibitem{bergmann2022mvtec}
 P.~Bergmann., X.~Jin., D.~Sattlegger., and C.~Steger., ``The mvtec 3d-ad
@@ -330,5 +330,11 @@ D.~Gudovskiy, S.~Ishizaka, and K.~Kozuka, ``Cflow-ad: Real-time unsupervised
   anomaly detection with localization via conditional normalizing flows,'' in
   \emph{Proceedings of the IEEE/CVF winter conference on applications of
   computer vision}, 2022, pp. 98--107.
+
+\bibitem{bonfiglioli2022eyecandies}
+L.~Bonfiglioli, M.~Toschi, D.~Silvestri, N.~Fioraio, and D.~De~Gregorio, ``The
+  eyecandies dataset for unsupervised multimodal anomaly detection and
+  localization,'' in \emph{Proceedings of the Asian Conference on Computer
+  Vision}, 2022, pp. 3586--3602.
 
 \end{thebibliography}

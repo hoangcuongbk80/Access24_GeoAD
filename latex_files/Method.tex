@@ -119,7 +119,7 @@ During inference, we use the trained prediction network to predict geometric fea
 \mathbf{A}_{\text{anomaly}}(i, j) = \|\mathbf{F}_{geo}(i, j) - \hat{\mathbf{F}}_{geo}(i, j)\|_2
 \end{equation}
 
-\noindent This anomaly map $\mathbf{A}_{\text{anomaly}} \in \mathbb{R}^{H \times W}$ indicates the likelihood of anomalies at each spatial location. Regions with higher values represent areas where the predicted geometric features deviate significantly from the actual geometric features, suggesting the presence of anomalies. To obtain a global anomaly score for each sample, we calculate the maximum value in the anomaly map:
+\noindent This anomaly map $\mathbf{A}_{\text{anomaly}} \in \mathbb{R}^{H \times W}$ indicates the likelihood of anomalies at each spatial location. Regions with higher values represent areas where the predicted geometric features deviate significantly from the actual geometric features, suggesting the presence of anomalies. The predicted anomaly map is finally smoothed using a Gaussian kernel with $\sigma$=4, following \cite{roth2022towards}. To obtain a global anomaly score for each sample, we calculate the maximum value in the smoothed anomaly map:
 
 \begin{equation}
 S_{\text{global}} = \max_{i,j} \mathbf{A}_{\text{anomaly}}(i, j)
