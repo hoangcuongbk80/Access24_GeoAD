@@ -1,0 +1,201 @@
+\section*{Methodology}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\linewidth]{figs/overview}
+\caption{Overview of the proposed unsupervised anomaly detection framework. The method extracts 2D visual features from RGB images and 3D geometric features from point clouds. A Visual-to-Geometric Feature Reconstruction network predicts geometric features from visual inputs, and significant discrepancies indicate anomalies.}
+\label{fig:view}
+\end{figure*}
+
+Let $\mathbf{I} \in \mathbb{R}^{H \times W \times 3}$ represent an RGB image, where $H$ and $W$ denote the height and width of the image, and the 3 channels correspond to the color information. Let $\mathbf{D} \in \mathbb{R}^{H \times W}$ represent the corresponding depth image, which is pixel-registered with $\mathbf{I}$. This means that each pixel $(u, v)$ in $\mathbf{D}$ corresponds to a pixel in $\mathbf{I}$, providing a depth value $d_{u,v}$ for each valid pixel. From the depth image $\mathbf{D}$, we generate a 3D point cloud $\mathbf{P} = \{(x_i, y_i, z_i)\}_{i=1}^{M}$, where $M$ is the number of valid depth points and each point $(x_i, y_i, z_i)$ represents the 3D coordinates derived from the depth information.
+
+As shown in Figure \ref{fig:view} the objective of the proposed method is to detect anomalies by predicting the 3D geometric features $\hat{\mathbf{F}}_{geo}$ from the 2D visual features $\mathbf{F}_{vis}$ and comparing them with the actual geometric features $\mathbf{F}_{geo}$ extracted from the point cloud. First, the visual features $\mathbf{F}_{vis} \in \mathbb{R}^{H \times W \times d}$ are extracted from the RGB image $\mathbf{I}$ using a Vision Transformer (ViT), capturing the appearance of the object in 2D space. Then, the 3D geometric features $\mathbf{F}_{geo} \in \mathbb{R}^{H \times W \times d}$ are obtained from the depth image $\mathbf{D}$ using a pre-trained 3D model. The core of the method is the geometric feature reconstruction network, which predicts the geometric features $\hat{\mathbf{F}}_{geo}$ from the visual inputs $\mathbf{F}_{vis}$. During training, the network minimizes the difference between the predicted geometric features $\hat{\mathbf{F}}_{geo}$ and the actual geometric features $\mathbf{F}_{geo}$ by minimizing the loss $\mathcal{L}_{geo}$. This process allows the network to learn the normal correlations between 2D visual data and 3D geometric data. During inference, anomalies are detected by comparing the predicted geometric features $\hat{\mathbf{F}}_{geo}$ with the actual geometric features $\mathbf{F}_{geo}$. Significant deviations between these features, measured using the Euclidean distance or another discrepancy measure, indicate abnormal regions in the object.
+
+\subsection*{3D Point Cloud Feature Extraction}
+
+The 3D point cloud $\mathbf{P} = \{(x_i, y_i, z_i)\}_{i=1}^{M}$ is processed using a Masked Autoencoder (MAE) \cite{pang2022masked}. The point cloud is first divided into patches using Farthest Point Sampling (FPS) and K-Nearest Neighbors (KNN). FPS selects $n$ points as patch centers, and KNN selects the $k$ nearest neighbors for each center:
+
+\begin{equation}
+    \mathbf{C_T} = \text{FPS}(\mathbf{P}), \quad \mathbf{C_T} \in \mathbb{R}^{n \times 3}\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+\begin{equation}
+    \mathbf{P}_{patch} = \text{KNN}(\mathbf{P}, \mathbf{C_T}), \quad \mathbf{P}_{patch} \in \mathbb{R}^{n \times k \times 3}\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent The masked point patches are processed through PointNet \cite{qi2017pointnet} and the autoencoder to produce geometric features $\mathbf{G}_{geom} \in \mathbb{R}^{M \times D}$. The geometric features $\mathbf{G}_{geom} \in \mathbb{R}^{M \times d}$ are produced for each point in the point cloud. Since the 3D point cloud is derived from the depth image $\mathbf{D}$, we know the pixel coordinates $(u_i, v_i)$ of each 3D point $(x_i, y_i, z_i)$, allowing us to map the geometric features back to their corresponding pixel locations in the 2D image. Using this projection, we place the geometric features into a sparse 2D feature map $\mathbf{G}_{map} \in \mathbb{R}^{H \times W \times d}$, where the pixel $(u_i, v_i)$ contains the feature vector for point $i$.
+
+\begin{equation}
+\mathbf{G}_{map}[u_i, v_i, :] = \mathbf{G}_{geom}[i, :]\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent For pixels without corresponding 3D points, we apply interpolation method as in \cite{wang2023multimodal} to propagate geometric features from neighboring pixels:
+
+\begin{equation}
+    \mathbf{F}_{geo} = \text{Interpolate}(\mathbf{G}_{map}) \in \mathbb{R}^{H \times W \times D}\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\subsection*{Visual Feature Extraction}
+
+The RGB image $\mathbf{I}$ is processed using a Vision Transformer (ViT) \cite{dosovitskiy2020image} to extract high-level visual features. The image $\mathbf{I}$ is divided into non-overlapping patches of size $p \times p$, and each patch is flattened into a vector. A linear projection is applied to embed the patches into a $d$-dimensional feature space:
+
+\begin{equation}
+    \mathbf{x}_p = \text{Flatten}(\mathbf{I}) \in \mathbb{R}^{(H \times W) / p^2 \times (p \times p \times 3)}\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent The set of embedded patches is passed through the transformer encoder to obtain RGB feature tokens:
+
+\begin{equation}
+    \mathbf{T}_{rgb} = ViT(\mathbf{x}_p) \in \mathbb{R}^{N_p \times d}\DIFaddbegin \DIFadd{,
+}\DIFaddend \end{equation}
+
+\noindent where $N_p = \frac{H \times W}{p^2}$ is the number of patches and $d$ is the dimension of the feature vectors. 
+
+\subsection*{Visual-to-Geometric Feature Reconstruction}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{figs/NL}
+\caption{The proposed visual feature enhancement module $\mathcal{M}_{FE}$ used in geometric feature reconstruction. The module \DIFdelbeginFL \DIFdelFL{improves local feature representation through }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{incorporates }\DIFaddendFL non-local attention and graph convolutional networks \DIFaddbeginFL \DIFaddFL{to improve the interaction between global and local features}\DIFaddendFL .}
+\label{fig:NL}
+\end{figure*}
+
+\DIFdelbegin \DIFdel{While transformers excel at }\DIFdelend \DIFaddbegin \DIFadd{The Visual-to-Geometric Feature Reconstruction network serves as the core of the proposed method, learning to reconstruct 3D geometric features from 2D visual inputs. This approach leverages the complementary nature of appearance and geometric information, enabling precise anomaly detection without the need for direct multimodal fusion. 
+}
+
+\DIFadd{Transformers are well-suited for }\DIFaddend capturing global contextual information across \DIFdelbegin \DIFdel{the entire image, they often fall short when it comes to efficiently modeling local interactions . This becomes particularly problematic }\DIFdelend \DIFaddbegin \DIFadd{visual tokens; however, their ability to model localized interactions remains limited. This limitation is particularly critical }\DIFaddend in anomaly detection, where \DIFdelbegin \DIFdel{distinguishing between normal and anomalous regions requires }\DIFdelend fine-grained \DIFdelbegin \DIFdel{analysis due to their often subtle differences. As a result, a combined approach that leverages both global context and local feature interactions is critical for achieving accurate detection}\DIFdelend \DIFaddbegin \DIFadd{deviations often indicate defects}\DIFaddend . To address this\DIFdelbegin \DIFdel{challenge, we introduce }\DIFdelend \DIFaddbegin \DIFadd{, we integrate }\DIFaddend a visual feature enhancement module $\mathcal{M}_{FE}$ \DIFdelbegin \DIFdel{that enhances the geometric feature reconstruction process by improving local feature representation (see Figure\ref{fig:NL}). Inspired by the works of \cite{te2020edge, wang2018non}, this module applies specialized operations to neighboring tokens, ensuring that localized details are preserved alongside the global context . The enhancement process begins with a }\DIFdelend \DIFaddbegin \DIFadd{(Figure~\ref{fig:NL}) within the reconstruction network. This module enhances local feature representations while retaining global context by combining }\DIFaddend non-local \DIFdelbegin \DIFdel{operation, which aggregates information from surrounding tokens to capture broader context and potential anomaly signals. Following this, a graph convolutional network (GCN) is employed to further explore the higher-order semantic relationships between neighboring tokens, allowing the model to detect subtle deviations that may indicate anomalies. The proposed enhancement method is particularly suitable for anomaly detection because anomalies typically manifest as small, localized changes in texture, structure, or geometry. The }\DIFdelend \DIFaddbegin \DIFadd{attention \cite{wang2018non} with graph convolutional networks (GCNs) \cite{defferrard2016convolutional, te2020edge}. The combination of }\DIFaddend non-local \DIFdelbegin \DIFdel{operation ensures that the model can effectively consider both distant and nearby features , enabling it to detect anomalies that are not easily distinguishable based on local patterns alone.
+Meanwhile, the GCN enhances the model's ability to focus on higher-level semantic differences by refining local interactions, making it more sensitive to the fine-grained irregularities that characterize anomalies. Together, these operations create a robust system capable of detecting even subtle anomalies in complex industrial settings. }\DIFdelend \DIFaddbegin \DIFadd{attention and graph convolutional networks (GCNs) was chosen to effectively address the complementary aspects of global and local feature integration. Non-local attention captures long-range dependencies across the entire image, which is critical for identifying correlations in visual features across spatially distant regions. GCNs, on the other hand, excel at modeling local relationships and refining features based on neighborhood structures.
+}\DIFaddend 
+
+\DIFaddbegin \paragraph*{\DIFadd{Non-Local Attention for Global Context}}
+\DIFadd{Non-local attention \cite{wang2018non} captures relationships between spatially distant visual tokens, providing the network with a global understanding of correlations in visual features. }\DIFaddend Specifically, given two neighboring tokens $\mathbf{T}_1$ and $\mathbf{T}_2$ \DIFdelbegin \DIFdel{from visual feature extraction, they are normalized. For instance, }\DIFdelend \DIFaddbegin \DIFadd{extracted from a Vision Transformer, the attention mechanism refines }\DIFaddend $\mathbf{T}_1$ \DIFdelbegin \DIFdel{is passed through two linear projection functions, $\mathfrak{P}_v$ and $\mathfrak{P}_k$, yielding dimension-reduced sequences $\mathbf{T}_v$ and $\mathbf{T}_k$ ($\mathbf{T}_v \in \mathbb{R}^{N_p \times \frac{d}{2}}$ and $\mathbf{T}_k \in \mathbb{R}^{N_p \times \frac{d}{2}}$)}\DIFdelend \DIFaddbegin \DIFadd{as follows}\DIFaddend :
+
+\DIFdelbegin \[
+\DIFdel{\mathbf{T}_v = \mathfrak{P}_v(\mathbf{T}_1), \quad \mathbf{T}_k = \mathfrak{P}_k(\mathbf{T}_1)
+}\]
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation}
+\DIFadd{\mathbf{T}_v = \mathfrak{P}_v(\mathbf{T}_1), \quad \mathbf{T}_k = \mathfrak{P}_k(\mathbf{T}_1),
+}\end{equation}
+\DIFaddend 
+
+\noindent \DIFdelbegin \DIFdel{Next, }\DIFdelend \DIFaddbegin \DIFadd{where $\mathfrak{P}_v$ and $\mathfrak{P}_k$ are linear projection layers reducing the dimensionality of $\mathbf{T}_1$ to $\frac{d}{2}$. }\DIFaddend $\mathbf{T}_1$ and $\mathbf{T}_2$ are concatenated to form \DIFdelbegin \DIFdel{an integrated token }\DIFdelend $\mathbf{T}_q$\DIFdelbegin \DIFdel{. A linear projection }\DIFdelend \DIFaddbegin \DIFadd{, and the attention weights are computed as:
+}
+
+\begin{equation}
+\DIFadd{\mathbf{T}_q^w = \text{softmax}(\mathfrak{P}_q(\mathbf{T}_q)), \quad \mathbf{T}_q' = P\left(\mathbf{T}_k \odot \mathbf{T}_q^w\right),
+}\end{equation}
+
+\noindent \DIFadd{where }\DIFaddend $\mathfrak{P}_q$ \DIFdelbegin \DIFdel{reduces its dimension to $\frac{d}{2}$, and a softmax function produces a weight map $\mathbf{T}_q^w$. This map is element-wise multiplied with $\mathbf{T}_k$, followed by }\DIFdelend \DIFaddbegin \DIFadd{projects $\mathbf{T}_q$ to a lower dimension, and $P(\cdot)$ is }\DIFaddend adaptive average pooling\DIFdelbegin \DIFdel{$P(\cdot)$ to reduce computational cost:
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\[
+\DIFdel{\mathbf{T}_q' = F_1(\mathbf{T}_k, \mathbf{T}_q) = P\left(\mathbf{T}_k \odot \text{softmax}(\mathfrak{P}_q(\mathbf{T}_q))\right)
+}\]
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < \noindent %%%
+\DIFdel{A matrix product between $\mathbf{T}_k$ and $\mathbf{T}_q'$ explores their correlation, followed by a softmax operation to generate an }\DIFdelend \DIFaddbegin \DIFadd{. The }\DIFaddend attention map $\mathbf{T}_a$ \DIFaddbegin \DIFadd{is derived from the interaction}\DIFaddend :
+
+\DIFdelbegin \[
+\DIFdel{\mathbf{T}_a = \text{softmax}\left(\mathbf{T}_q' \otimes \mathbf{T}_k^\top\right)
+}\]
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < \noindent %%%
+\DIFdel{Following \cite{te2020edge}, the attention map $\mathbf{T}_a$ and token $\mathbf{T}_v$ are passed to a graph fusion module (GFM) . In GFM, $\mathbf{T}_v$ is projected onto the graph domain using $\mathbf{T}_a$:
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\[
+\DIFdel{\mathbf{T}_g = \mathbf{T}_v \otimes \mathbf{T}_a^\top
+}\]
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation}
+\DIFadd{\mathbf{T}_a = \text{softmax}(\mathbf{T}_q' \otimes \mathbf{T}_k^\top).
+}\end{equation}
+\DIFaddend 
+
+\DIFdelbegin %DIFDELCMD < \noindent %%%
+\DIFdel{In this step, pixels with similar featuresare grouped into a vertex, and a single-layer GCN learns high-level semantic relations and non-local representations. The vertex features $\mathbf{T}_g$ undergo a spectral graph convolution, producing}\DIFdelend \DIFaddbegin \paragraph*{\DIFadd{Graph Convolutional Networks for Local Interactions}}
+\DIFadd{Local interactions between visual features are refined using a graph convolutional network (GCN) \cite{te2020edge}. Tokens are projected into a graph representation where vertices represent similar features, and edges encode relationships. The refined token $\hat{\mathbf{T}}_g$ is computed as}\DIFaddend :
+
+\DIFdelbegin \[
+\DIFdel{\hat{\mathbf{T}}_g = \text{ReLU}\left((I - A)\mathbf{T}_g w_g\right)
+}\]
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation}
+\DIFadd{\hat{\mathbf{T}}_g = \text{ReLU}\left((I - A)\mathbf{T}_g w_g\right),
+}\end{equation}
+\DIFaddend 
+
+\noindent where \DIFaddbegin \DIFadd{$\mathbf{T}_g = \mathbf{T}_v \otimes \mathbf{T}_a^\top$, }\DIFaddend $A$ is the adjacency matrix\DIFdelbegin \DIFdel{representing graph connectivity, and $w_g \in \mathbb{R}^{p \times p}$ }\DIFdelend \DIFaddbegin \DIFadd{, and $w_g$ }\DIFaddend is the GCN weight matrix. \DIFdelbegin \DIFdel{Finally, a skip connection combines the input token $\mathbf{T}_1$ with the enhanced representation}\DIFdelend \DIFaddbegin \DIFadd{A skip connection integrates global and local refinements}\DIFaddend :
+
+\DIFdelbegin \[
+\DIFdel{\mathbf{T}_{1}^{e} = \mathcal{F}_2(\hat{\mathbf{T}}_g, \mathbf{T}_a, \mathbf{T}_1) = \hat{\mathbf{T}}_g \otimes \mathbf{T}_a^\top + \mathbf{T}_1
+}\]
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{equation}
+\DIFadd{\mathbf{T}_1^e = \hat{\mathbf{T}}_g + \mathbf{T}_1.
+}\end{equation}
+\DIFaddend 
+
+\noindent The same process is applied to other tokens. \DIFdelbegin \DIFdel{Since the number of patches $N_p$ is smaller than the spatial dimensions $H \times W$, each token in $\mathbf{T}^{e}$ corresponds to a $p \times p$ patch in the original image. To restore the resolution of the enhanced features, the tokens $\mathbf{F}_{e}$ are reshaped into a patch-based feature map:
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\begin{displaymath}
+    \DIFdel{\mathbf{F}_{patches} = \text{Reshape}(\mathbf{T}^{e}) \in \mathbb{R}^{\frac{H}{p} \times \frac{W}{p} \times d}
+}\end{displaymath}
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{The adjacency matrix $A$ is dynamically constructed based on the similarity of visual tokens in the feature space. Specifically, token similarity is measured using a distance metric, and a thresholding mechanism is applied to determine graph connectivity. This approach ensures that $A$ adapts to the characteristics of each input, capturing relevant local relationships. The GCN's ability to model higher-order interactions and propagate contextual information across connected nodes provides a distinct advantage over simpler feature aggregation methods, particularly in capturing subtle anomalies that span localized regions.
+}\DIFaddend 
+
+\DIFdelbegin %DIFDELCMD < \noindent %%%
+\DIFdel{Next, the patch-based feature map is upsampled using bilinear interpolation }\DIFdelend \DIFaddbegin \paragraph*{\DIFadd{Reconstruction of Geometric Features}}
+\DIFadd{The enhanced visual features $\mathbf{T}^e$ are reshaped and upsampled }\DIFaddend to match the \DIFdelbegin \DIFdel{original imageresolution}\DIFdelend \DIFaddbegin \DIFadd{spatial dimensions of the input image}\DIFaddend :
+
+\begin{equation}
+\mathbf{F}\DIFdelbegin \DIFdel{_{vis} }\DIFdelend \DIFaddbegin \DIFadd{_{patches} }\DIFaddend = \DIFdelbegin \DIFdel{\text{BilinearUpsample}}\DIFdelend \DIFaddbegin \DIFadd{\text{Reshape}}\DIFaddend (\DIFdelbegin \DIFdel{\mathbf{F}_{patches}}\DIFdelend \DIFaddbegin \DIFadd{\mathbf{T}^e}\DIFaddend ) \in \mathbb{R}\DIFdelbegin \DIFdel{^{H \times W \times d}
+}\DIFdelend \DIFaddbegin \DIFadd{^{\frac{H}{p} \times \frac{W}{p} \times d},
+}\DIFaddend \end{equation}
+
+\DIFaddbegin \begin{equation}
+\DIFadd{\mathbf{F}_{vis} = \text{BilinearUpsample}(\mathbf{F}_{patches}) \in \mathbb{R}^{H \times W \times d}.
+}\end{equation}
+
+\DIFaddend \noindent \DIFdelbegin \DIFdel{This ensures spatial alignment of $\mathbf{F}_{vis}$ with the original image dimensions $H \times W$}\DIFdelend \DIFaddbegin \DIFadd{Bilinear upsampling was selected for its simplicity and computational efficiency. While more complex methods, such as learnable upsampling, could potentially improve alignment precision, experiments showed that bilinear upsampling produced negligible artifacts and did not significantly affect the accuracy of the reconstructed geometric features}\DIFaddend . Finally, \DIFaddbegin \DIFadd{$\mathbf{F}_{vis}$ is passed through }\DIFaddend a lightweight MLP \DIFdelbegin \DIFdel{maps the visual feature vector of size $d$ to the geometric feature of size $D$, producing the predicted geometric feature map $\hat{\mathbf{F}}_{geo} \in \mathbb{R}^{H \times W \times D}$. The }\DIFdelend \DIFaddbegin \DIFadd{to predict geometric features $\hat{\mathbf{F}}_{geo}$:
+}
+
+\begin{equation}
+\DIFadd{\hat{\mathbf{F}}_{geo} = \text{MLP}(\mathbf{F}_{vis}).
+}\end{equation}
+
+\paragraph*{\DIFadd{Loss Function}}
+\DIFadd{The network minimizes the }\DIFaddend L2 \DIFdelbegin \DIFdel{loss between the predicted and actual geometric features }\DIFdelend \DIFaddbegin \DIFadd{reconstruction loss to align the predicted geometric features $\hat{\mathbf{F}}_{geo}$ with the ground-truth features }\DIFaddend $\mathbf{F}_{geo}$\DIFdelbegin \DIFdel{from the 3D point cloud is minimized during training}\DIFdelend :
+
+\begin{equation}
+\mathcal{L}_{geo} = \frac{1}{HWD} \sum_{i=1}^{H} \sum_{j=1}^{W} \sum_{k=1}^{D} \left( \mathbf{F}_{geo}(i, j, k) - \hat{\mathbf{F}}_{geo}(i, j, k) \right)^2\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent \DIFdelbegin \DIFdel{The network progressively refines the visual features using convolutional layers, residual blocks, and attention mechanisms. By minimizing $\mathcal{L}_{geo}$, the network learns correlations between 2D appearance and 3D structure, making it highly effective for detecting anomalies in }\DIFdelend \DIFaddbegin \DIFadd{By leveraging non-local attention and GCNs, $\mathcal{M}_{FE}$ ensures effective integration of global and local information. This design allows the network to capture subtle deviations in both texture and geometry, resulting in accurate anomaly detection for complex }\DIFaddend industrial settings.
+\DIFdelbegin \DIFdel{The combination of attention mechanisms and residual connections ensures the preservation and effective utilization of spatial and channel information during geometric feature prediction.
+}\DIFdelend 
+
+\subsection*{Anomaly Localization}
+
+During inference, we use the trained prediction network to predict geometric features from the visual features of test samples. For each sample, we extract the 2D visual features $\mathbf{F}_{vis}$ from the RGB image using the pre-trained 2D model and the 3D geometric features $\mathbf{F}_{geo}$ from the point cloud using the pre-trained 3D model. The visual features $\mathbf{F}_{vis}$ are then passed through the geometric feature prediction network to predict the corresponding geometric features $\hat{\mathbf{F}}_{geo}$. We compute an anomaly map by measuring the difference between the predicted geometric features $\hat{\mathbf{F}}_{geo}$ and the actual geometric features $\mathbf{F}_{geo}$ at each spatial location using the L2 norm:
+
+\begin{equation}
+\mathbf{A}_{\text{anomaly}}(i, j) = \|\mathbf{F}_{geo}(i, j) - \hat{\mathbf{F}}_{geo}(i, j)\|_2\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent This anomaly map $\mathbf{A}_{\text{anomaly}} \in \mathbb{R}^{H \times W}$ indicates the likelihood of anomalies at each spatial location. Regions with higher values represent areas where the predicted geometric features deviate significantly from the actual geometric features, suggesting the presence of anomalies. \DIFaddbegin \DIFadd{The predicted anomaly map is finally smoothed using a Gaussian kernel with $\sigma$=4, following \cite{roth2022towards}. }\DIFaddend To obtain a global anomaly score for each sample, we calculate the maximum value in the \DIFaddbegin \DIFadd{smoothed }\DIFaddend anomaly map:
+
+\begin{equation}
+S_{\text{global}} = \max_{i,j} \mathbf{A}_{\text{anomaly}}(i, j)\DIFaddbegin \DIFadd{.
+}\DIFaddend \end{equation}
+
+\noindent If the global anomaly score $S_{global}$ exceeds a predefined threshold, the sample is classified as anomalous\DIFaddbegin \DIFadd{. The threshold can be determined as in \cite{bergmann2022mvtec, wang2023multimodal}}\DIFaddend . Additionally, the anomaly map provides spatial localization of anomalies by highlighting regions where the largest deviations occur, enabling a detailed inspection of the anomalous areas. 

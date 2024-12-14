@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2023.5.31)  13 DEC 2024 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2023.5.31)  14 DEC 2024 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -632,36 +632,39 @@ Package caption Info: End \AtBeginDocument code.
 <bullet.png, id=3, 12.045pt x 35.38219pt>
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 63.
+Package pdftex.def Info: bullet.png  used on input line 64.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 69.
+Package pdftex.def Info: bullet.png  used on input line 70.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 75.
-LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 75.
+LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 76.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 76.
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 75--75
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 76--76
 []  
  []
 
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 75--75
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 76--76
 []  
  []
 
 (./Introduction.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1701) has occurred while \output is active []
 
 <logo.png, id=4, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
@@ -740,12 +743,9 @@ File: figs/overview.png Graphic file (type png)
 <use figs/overview.png>
 Package pdftex.def Info: figs/overview.png  used on input line 5.
 (pdftex.def)             Requested size: 505.12177pt x 157.99535pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 11.
+Package pdftex.def Info: notaglinelogo.png  used on input line 8.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -764,30 +764,10 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [3]
 Underfull \hbox (badness 1448) in paragraph at lines 25--26
-\T1/times/n/n/10 [44] and the au-toen-coder to pro-duce ge-o-met-ric fea-tures
+\T1/times/n/n/10 [55] and the au-toen-coder to pro-duce ge-o-met-ric fea-tures
  []
 
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 49.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[4 <./figs/overview.png>]
-<figs/NL.png, id=42, 985.6825pt x 428.60126pt>
+<figs/NL.png, id=28, 985.6825pt x 428.60126pt>
 File: figs/NL.png Graphic file (type png)
 <use figs/NL.png>
 Package pdftex.def Info: figs/NL.png  used on input line 57.
@@ -798,13 +778,9 @@ Underfull \hbox (badness 2096) in paragraph at lines 67--68
 
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 69.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 117.
+Package pdftex.def Info: notaglinelogo.png  used on input line 69.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -821,234 +797,262 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[5]) (./Results.tex
-<figs/result_rgb.png, id=49, 1042.64531pt x 218.31563pt>
+[4]
+LaTeX Font Info:    Try loading font information for U+euf on input line 70.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 99.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[5 <./figs/overview.png> <./figs/NL.png>]) (./Results.tex
+Underfull \hbox (badness 1622) in paragraph at lines 140--1
+\T1/times/n/n/10 old can be de-ter-mined as in [23, 60]. Ad-di-tion-ally, the
+ []
+
+<figs/result_rgb.png, id=50, 1042.64531pt x 218.31563pt>
 File: figs/result_rgb.png Graphic file (type png)
 <use figs/result_rgb.png>
 Package pdftex.def Info: figs/result_rgb.png  used on input line 6.
 (pdftex.def)             Requested size: 454.60649pt x 95.18971pt.
-<figs/result_pc.png, id=50, 1041.1397pt x 151.3153pt>
+<figs/result_pc.png, id=51, 1041.1397pt x 151.3153pt>
 File: figs/result_pc.png Graphic file (type png)
 <use figs/result_pc.png>
 Package pdftex.def Info: figs/result_pc.png  used on input line 7.
 (pdftex.def)             Requested size: 454.60649pt x 66.07097pt.
-<figs/result_gt.png, id=51, 1041.8925pt x 205.5178pt>
+<figs/result_gt.png, id=52, 1041.8925pt x 205.5178pt>
 File: figs/result_gt.png Graphic file (type png)
 <use figs/result_gt.png>
 Package pdftex.def Info: figs/result_gt.png  used on input line 8.
 (pdftex.def)             Requested size: 454.60649pt x 89.67235pt.
-<figs/result_baseline.png, id=52, 1392.20125pt x 277.035pt>
+<figs/result_baseline.png, id=53, 1392.20125pt x 277.035pt>
 File: figs/result_baseline.png Graphic file (type png)
 <use figs/result_baseline.png>
 Package pdftex.def Info: figs/result_baseline.png  used on input line 9.
 (pdftex.def)             Requested size: 454.60649pt x 90.46225pt.
-<figs/result_ours.png, id=53, 1385.175pt x 274.02374pt>
+<figs/result_ours.png, id=54, 1385.175pt x 274.02374pt>
 File: figs/result_ours.png Graphic file (type png)
 <use figs/result_ours.png>
 Package pdftex.def Info: figs/result_ours.png  used on input line 10.
 (pdftex.def)             Requested size: 454.60649pt x 89.93054pt.
-<figs/result/carot_rgb.png, id=54, 192.72pt x 192.72pt>
+<figs/result/carot_rgb.png, id=55, 192.72pt x 192.72pt>
 File: figs/result/carot_rgb.png Graphic file (type png)
 <use figs/result/carot_rgb.png>
 Package pdftex.def Info: figs/result/carot_rgb.png  used on input line 25.
 (pdftex.def)             Requested size: 85.86977pt x 85.86745pt.
-<figs/result/dowel_rgb.png, id=55, 96.36pt x 96.36pt>
+<figs/result/dowel_rgb.png, id=56, 96.36pt x 96.36pt>
 File: figs/result/dowel_rgb.png Graphic file (type png)
 <use figs/result/dowel_rgb.png>
 Package pdftex.def Info: figs/result/dowel_rgb.png  used on input line 26.
 (pdftex.def)             Requested size: 85.86977pt x 85.86891pt.
-<figs/result/foam_rgb.png, id=56, 216.81pt x 216.81pt>
+<figs/result/foam_rgb.png, id=57, 216.81pt x 216.81pt>
 File: figs/result/foam_rgb.png Graphic file (type png)
 <use figs/result/foam_rgb.png>
 Package pdftex.def Info: figs/result/foam_rgb.png  used on input line 27.
 (pdftex.def)             Requested size: 85.86977pt x 85.86893pt.
-<figs/result/potato_rgb.png, id=57, 192.72pt x 192.72pt>
+<figs/result/potato_rgb.png, id=58, 192.72pt x 192.72pt>
 File: figs/result/potato_rgb.png Graphic file (type png)
 <use figs/result/potato_rgb.png>
 Package pdftex.def Info: figs/result/potato_rgb.png  used on input line 28.
 (pdftex.def)             Requested size: 85.86977pt x 85.86745pt.
-<figs/result/tire_rgb.png, id=58, 601.24625pt x 601.24625pt>
+<figs/result/tire_rgb.png, id=59, 601.24625pt x 601.24625pt>
 File: figs/result/tire_rgb.png Graphic file (type png)
 <use figs/result/tire_rgb.png>
 Package pdftex.def Info: figs/result/tire_rgb.png  used on input line 29.
 (pdftex.def)             Requested size: 85.86977pt x 85.86195pt.
-<figs/result/carot_pc.png, id=59, 574.145pt x 574.145pt>
+<figs/result/carot_pc.png, id=60, 574.145pt x 574.145pt>
 File: figs/result/carot_pc.png Graphic file (type png)
 <use figs/result/carot_pc.png>
 Package pdftex.def Info: figs/result/carot_pc.png  used on input line 32.
 (pdftex.def)             Requested size: 85.86977pt x 85.86397pt.
-<figs/result/dowel_pc.png, id=60, 546.04pt x 546.04pt>
+<figs/result/dowel_pc.png, id=61, 546.04pt x 546.04pt>
 File: figs/result/dowel_pc.png Graphic file (type png)
 <use figs/result/dowel_pc.png>
 Package pdftex.def Info: figs/result/dowel_pc.png  used on input line 33.
 (pdftex.def)             Requested size: 85.86977pt x 85.86844pt.
-<figs/result/foam_pc.png, id=61, 495.8525pt x 495.8525pt>
+<figs/result/foam_pc.png, id=62, 495.8525pt x 495.8525pt>
 File: figs/result/foam_pc.png Graphic file (type png)
 <use figs/result/foam_pc.png>
 Package pdftex.def Info: figs/result/foam_pc.png  used on input line 34.
 (pdftex.def)             Requested size: 85.86977pt x 85.86755pt.
-<figs/result/potato_pc.png, id=62, 468.75125pt x 468.75125pt>
+<figs/result/potato_pc.png, id=63, 468.75125pt x 468.75125pt>
 File: figs/result/potato_pc.png Graphic file (type png)
 <use figs/result/potato_pc.png>
 Package pdftex.def Info: figs/result/potato_pc.png  used on input line 35.
 (pdftex.def)             Requested size: 85.86977pt x 85.86646pt.
-<figs/result/tire_pc.png, id=63, 468.75125pt x 468.75125pt>
+<figs/result/tire_pc.png, id=64, 468.75125pt x 468.75125pt>
 File: figs/result/tire_pc.png Graphic file (type png)
 <use figs/result/tire_pc.png>
 Package pdftex.def Info: figs/result/tire_pc.png  used on input line 36.
 (pdftex.def)             Requested size: 85.86977pt x 85.86646pt.
-<figs/result/carot_gt.png, id=64, 192.72pt x 192.72pt>
+<figs/result/carot_gt.png, id=65, 192.72pt x 192.72pt>
 File: figs/result/carot_gt.png Graphic file (type png)
 <use figs/result/carot_gt.png>
 Package pdftex.def Info: figs/result/carot_gt.png  used on input line 39.
 (pdftex.def)             Requested size: 85.86977pt x 85.86745pt.
-<figs/result/dowel_gt.png, id=65, 96.36pt x 96.36pt>
+<figs/result/dowel_gt.png, id=66, 96.36pt x 96.36pt>
 File: figs/result/dowel_gt.png Graphic file (type png)
 <use figs/result/dowel_gt.png>
 Package pdftex.def Info: figs/result/dowel_gt.png  used on input line 40.
 (pdftex.def)             Requested size: 85.86977pt x 85.86891pt.
-<figs/result/foam_gt.png, id=66, 216.81pt x 216.81pt>
+<figs/result/foam_gt.png, id=67, 216.81pt x 216.81pt>
 File: figs/result/foam_gt.png Graphic file (type png)
 <use figs/result/foam_gt.png>
 Package pdftex.def Info: figs/result/foam_gt.png  used on input line 41.
 (pdftex.def)             Requested size: 85.86977pt x 85.86893pt.
-<figs/result/potato_gt.png, id=67, 192.72pt x 192.72pt>
+<figs/result/potato_gt.png, id=68, 192.72pt x 192.72pt>
 File: figs/result/potato_gt.png Graphic file (type png)
 <use figs/result/potato_gt.png>
 Package pdftex.def Info: figs/result/potato_gt.png  used on input line 42.
 (pdftex.def)             Requested size: 85.86977pt x 85.86745pt.
-<figs/result/tire_gt.png, id=68, 486.81876pt x 486.81876pt>
+<figs/result/tire_gt.png, id=69, 486.81876pt x 486.81876pt>
 File: figs/result/tire_gt.png Graphic file (type png)
 <use figs/result/tire_gt.png>
 Package pdftex.def Info: figs/result/tire_gt.png  used on input line 43.
 (pdftex.def)             Requested size: 85.86977pt x 85.87053pt.
-<figs/result/carot_bl.png, id=69, 803.0pt x 803.0pt>
+<figs/result/carot_bl.png, id=70, 803.0pt x 803.0pt>
 File: figs/result/carot_bl.png Graphic file (type png)
 <use figs/result/carot_bl.png>
 Package pdftex.def Info: figs/result/carot_bl.png  used on input line 46.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/dowel_bl.png, id=70, 401.5pt x 401.5pt>
+<figs/result/dowel_bl.png, id=71, 401.5pt x 401.5pt>
 File: figs/result/dowel_bl.png Graphic file (type png)
 <use figs/result/dowel_bl.png>
 Package pdftex.def Info: figs/result/dowel_bl.png  used on input line 47.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/foam_bl.png, id=71, 903.375pt x 903.375pt>
+<figs/result/foam_bl.png, id=72, 903.375pt x 903.375pt>
 File: figs/result/foam_bl.png Graphic file (type png)
 <use figs/result/foam_bl.png>
 Package pdftex.def Info: figs/result/foam_bl.png  used on input line 48.
 (pdftex.def)             Requested size: 85.86977pt x 85.86287pt.
-<figs/result/potato_bl.png, id=72, 803.0pt x 803.0pt>
+<figs/result/potato_bl.png, id=73, 803.0pt x 803.0pt>
 File: figs/result/potato_bl.png Graphic file (type png)
 <use figs/result/potato_bl.png>
 Package pdftex.def Info: figs/result/potato_bl.png  used on input line 49.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/tire_bl.png, id=73, 588.1975pt x 588.1975pt>
+<figs/result/tire_bl.png, id=74, 588.1975pt x 588.1975pt>
 File: figs/result/tire_bl.png Graphic file (type png)
 <use figs/result/tire_bl.png>
 Package pdftex.def Info: figs/result/tire_bl.png  used on input line 50.
 (pdftex.def)             Requested size: 85.86977pt x 85.86534pt.
-<figs/result/carot_ours.png, id=74, 803.0pt x 803.0pt>
+<figs/result/carot_ours.png, id=75, 803.0pt x 803.0pt>
 File: figs/result/carot_ours.png Graphic file (type png)
 <use figs/result/carot_ours.png>
 Package pdftex.def Info: figs/result/carot_ours.png  used on input line 53.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/dowel_ours.png, id=75, 401.5pt x 401.5pt>
+<figs/result/dowel_ours.png, id=76, 401.5pt x 401.5pt>
 File: figs/result/dowel_ours.png Graphic file (type png)
 <use figs/result/dowel_ours.png>
 Package pdftex.def Info: figs/result/dowel_ours.png  used on input line 54.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/foam_ours.png, id=76, 903.375pt x 903.375pt>
+<figs/result/foam_ours.png, id=77, 903.375pt x 903.375pt>
 File: figs/result/foam_ours.png Graphic file (type png)
 <use figs/result/foam_ours.png>
 Package pdftex.def Info: figs/result/foam_ours.png  used on input line 55.
 (pdftex.def)             Requested size: 85.86977pt x 85.86287pt.
-<figs/result/potato_ours.png, id=77, 803.0pt x 803.0pt>
+<figs/result/potato_ours.png, id=78, 803.0pt x 803.0pt>
 File: figs/result/potato_ours.png Graphic file (type png)
 <use figs/result/potato_ours.png>
 Package pdftex.def Info: figs/result/potato_ours.png  used on input line 56.
 (pdftex.def)             Requested size: 85.86977pt x 85.86746pt.
-<figs/result/tire_ours.png, id=78, 563.10374pt x 563.10374pt>
+<figs/result/tire_ours.png, id=79, 563.10374pt x 563.10374pt>
 File: figs/result/tire_ours.png Graphic file (type png)
 <use figs/result/tire_ours.png>
 Package pdftex.def Info: figs/result/tire_ours.png  used on input line 57.
 (pdftex.def)             Requested size: 85.86977pt x 85.86244pt.
-<figs/eyecandies/29_image_5.png, id=79, 513.92pt x 513.92pt>
+<figs/eyecandies/29_image_5.png, id=80, 513.92pt x 513.92pt>
 File: figs/eyecandies/29_image_5.png Graphic file (type png)
 <use figs/eyecandies/29_image_5.png>
 Package pdftex.def Info: figs/eyecandies/29_image_5.png  used on input line 71.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/41_image_4.png, id=80, 513.92pt x 513.92pt>
+<figs/eyecandies/41_image_4.png, id=81, 513.92pt x 513.92pt>
 File: figs/eyecandies/41_image_4.png Graphic file (type png)
 <use figs/eyecandies/41_image_4.png>
 Package pdftex.def Info: figs/eyecandies/41_image_4.png  used on input line 72.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/45_image_5.png, id=81, 513.92pt x 513.92pt>
+<figs/eyecandies/45_image_5.png, id=82, 513.92pt x 513.92pt>
 File: figs/eyecandies/45_image_5.png Graphic file (type png)
 <use figs/eyecandies/45_image_5.png>
 Package pdftex.def Info: figs/eyecandies/45_image_5.png  used on input line 73.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/29_depth.png, id=82, 513.92pt x 513.92pt>
+<figs/eyecandies/29_depth.png, id=83, 513.92pt x 513.92pt>
 File: figs/eyecandies/29_depth.png Graphic file (type png)
 <use figs/eyecandies/29_depth.png>
 Package pdftex.def Info: figs/eyecandies/29_depth.png  used on input line 76.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/41_depth.png, id=83, 513.92pt x 513.92pt>
+<figs/eyecandies/41_depth.png, id=84, 513.92pt x 513.92pt>
 File: figs/eyecandies/41_depth.png Graphic file (type png)
 <use figs/eyecandies/41_depth.png>
 Package pdftex.def Info: figs/eyecandies/41_depth.png  used on input line 77.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/45_depth.png, id=84, 513.92pt x 513.92pt>
+<figs/eyecandies/45_depth.png, id=85, 513.92pt x 513.92pt>
 File: figs/eyecandies/45_depth.png Graphic file (type png)
 <use figs/eyecandies/45_depth.png>
 Package pdftex.def Info: figs/eyecandies/45_depth.png  used on input line 78.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/29_normals.png, id=85, 513.92pt x 513.92pt>
+<figs/eyecandies/29_normals.png, id=86, 513.92pt x 513.92pt>
 File: figs/eyecandies/29_normals.png Graphic file (type png)
 <use figs/eyecandies/29_normals.png>
 Package pdftex.def Info: figs/eyecandies/29_normals.png  used on input line 81.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/41_normals.png, id=86, 513.92pt x 513.92pt>
+<figs/eyecandies/41_normals.png, id=87, 513.92pt x 513.92pt>
 File: figs/eyecandies/41_normals.png Graphic file (type png)
 <use figs/eyecandies/41_normals.png>
 Package pdftex.def Info: figs/eyecandies/41_normals.png  used on input line 82.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/45_normals.png, id=87, 513.92pt x 513.92pt>
+<figs/eyecandies/45_normals.png, id=88, 513.92pt x 513.92pt>
 File: figs/eyecandies/45_normals.png Graphic file (type png)
 <use figs/eyecandies/45_normals.png>
 Package pdftex.def Info: figs/eyecandies/45_normals.png  used on input line 83.
 
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/29_mask.png, id=88, 513.92pt x 513.92pt>
+<figs/eyecandies/29_mask.png, id=89, 513.92pt x 513.92pt>
 File: figs/eyecandies/29_mask.png Graphic file (type png)
 <use figs/eyecandies/29_mask.png>
 Package pdftex.def Info: figs/eyecandies/29_mask.png  used on input line 86.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/41_mask.png, id=89, 513.92pt x 513.92pt>
+<figs/eyecandies/41_mask.png, id=90, 513.92pt x 513.92pt>
 File: figs/eyecandies/41_mask.png Graphic file (type png)
 <use figs/eyecandies/41_mask.png>
 Package pdftex.def Info: figs/eyecandies/41_mask.png  used on input line 87.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/45_mask.png, id=90, 513.92pt x 513.92pt>
+<figs/eyecandies/45_mask.png, id=91, 513.92pt x 513.92pt>
 File: figs/eyecandies/45_mask.png Graphic file (type png)
 <use figs/eyecandies/45_mask.png>
 Package pdftex.def Info: figs/eyecandies/45_mask.png  used on input line 88.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/29_ours.png, id=91, 513.92pt x 513.92pt>
+<figs/eyecandies/29_ours.png, id=92, 513.92pt x 513.92pt>
 File: figs/eyecandies/29_ours.png Graphic file (type png)
 <use figs/eyecandies/29_ours.png>
 Package pdftex.def Info: figs/eyecandies/29_ours.png  used on input line 91.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/41_ours.png, id=92, 513.92pt x 513.92pt>
+<figs/eyecandies/41_ours.png, id=93, 513.92pt x 513.92pt>
 File: figs/eyecandies/41_ours.png Graphic file (type png)
 <use figs/eyecandies/41_ours.png>
 Package pdftex.def Info: figs/eyecandies/41_ours.png  used on input line 92.
 (pdftex.def)             Requested size: 77.6573pt x 77.65712pt.
-<figs/eyecandies/45_ours.png, id=93, 513.92pt x 513.92pt>
+<figs/eyecandies/45_ours.png, id=94, 513.92pt x 513.92pt>
 File: figs/eyecandies/45_ours.png Graphic file (type png)
 <use figs/eyecandies/45_ours.png>
 Package pdftex.def Info: figs/eyecandies/45_ours.png  used on input line 93.
@@ -1077,24 +1081,15 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[6 <./figs/NL.png>]
+[6]
 Underfull \hbox (badness 3323) in paragraph at lines 115--115
 [][][]\T1/times/m/n/8 Our code and other ma-te-ri-als are avail-able at $https 
 : / / github . com /
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 117--118
-\T1/times/n/n/10 ages of res-o-lu-tion $\OT1/cmr/m/n/10 224 \OMS/cmsy/m/n/10 ^^
-B \OT1/cmr/m/n/10 224$\T1/times/n/n/10 , di-vid-ing them into non-
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 118.
+Package pdftex.def Info: notaglinelogo.png  used on input line 116.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1113,6 +1108,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [7 <./figs/result_rgb.png> <./figs/result_pc.png> <./figs/result_gt.png> <./fig
 s/result_baseline.png> <./figs/result_ours.png>]
+Underfull \hbox (badness 1546) in paragraph at lines 117--118
+\T1/times/n/n/10 ages of res-o-lu-tion $\OT1/cmr/m/n/10 224 \OMS/cmsy/m/n/10 ^^
+B \OT1/cmr/m/n/10 224$\T1/times/n/n/10 , di-vid-ing them into non-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1120,7 +1121,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 123.
+Package pdftex.def Info: notaglinelogo.png  used on input line 120.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1154,7 +1155,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 138.
+Package pdftex.def Info: notaglinelogo.png  used on input line 134.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1212,15 +1213,9 @@ Overfull \hbox (4.08356pt too wide) in paragraph at lines 204--204
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 2600) in paragraph at lines 253--254
-[]\T1/times/b/n/10 Simulation\T1/times/n/n/10 . We fur-ther ex-panded sim-u-la-
-tion tests to
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 254.
+Package pdftex.def Info: notaglinelogo.png  used on input line 252.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1238,6 +1233,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [10]
+Underfull \hbox (badness 2600) in paragraph at lines 253--254
+[]\T1/times/b/n/10 Simulation\T1/times/n/n/10 . We fur-ther ex-panded sim-u-la-
+tion tests to
+ []
+
+
 Underfull \hbox (badness 1895) in paragraph at lines 255--257
 []\T1/times/b/n/10 Configurations\T1/times/n/n/10 . To eval-u-ate the con-tri-b
 u-tions of dif-
@@ -1249,14 +1250,11 @@ Underfull \hbox (badness 1552) in paragraph at lines 257--258
  []
 
 
-Underfull \vbox (badness 1838) has occurred while \output is active []
-
-
-Underfull \vbox (badness 5893) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 266.
+Package pdftex.def Info: notaglinelogo.png  used on input line 264.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1278,6 +1276,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
 (./access.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
 Package pdftex.def Info: notaglinelogo.png  used on input line 2.
@@ -1298,14 +1298,14 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [12]
-Underfull \hbox (badness 1527) in paragraph at lines 67--72
+Underfull \hbox (badness 1527) in paragraph at lines 102--107
 \T1/times/n/n/7.61 supervised anomaly de-tec-tion via ad-ver-sar-ial train-ing,
 '' in \T1/times/n/it/7.61 Com-puter
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 197.
+Package pdftex.def Info: notaglinelogo.png  used on input line 176.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1323,23 +1323,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [13])
-<authors/DinhCuong.jpg, id=132, 1300.86pt x 1334.9875pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 91.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[14]
+<authors/DinhCuong.jpg, id=135, 1300.86pt x 1334.9875pt>
 File: authors/DinhCuong.jpg Graphic file (type jpg)
 <use authors/DinhCuong.jpg>
-Package pdftex.def Info: authors/DinhCuong.jpg  used on input line 90.
+Package pdftex.def Info: authors/DinhCuong.jpg  used on input line 91.
 (pdftex.def)             Requested size: 72.25217pt x 74.14767pt.
 File: authors/DinhCuong.jpg Graphic file (type jpg)
 <use authors/DinhCuong.jpg>
-Package pdftex.def Info: authors/DinhCuong.jpg  used on input line 90.
+Package pdftex.def Info: authors/DinhCuong.jpg  used on input line 91.
 (pdftex.def)             Requested size: 72.25217pt x 74.14767pt.
-<authors/prof_Tan.png, id=135, 416.55624pt x 491.8375pt>
+<authors/prof_Tan.png, id=138, 416.55624pt x 491.8375pt>
 File: authors/prof_Tan.png Graphic file (type png)
 <use authors/prof_Tan.png>
-Package pdftex.def Info: authors/prof_Tan.png  used on input line 93.
+Package pdftex.def Info: authors/prof_Tan.png  used on input line 94.
 (pdftex.def)             Requested size: 72.26917pt x 85.32986pt.
 File: authors/prof_Tan.png Graphic file (type png)
 <use authors/prof_Tan.png>
-Package pdftex.def Info: authors/prof_Tan.png  used on input line 93.
+Package pdftex.def Info: authors/prof_Tan.png  used on input line 94.
 (pdftex.def)             Requested size: 72.26917pt x 85.32986pt.
 Package epstopdf Info: Source file: <authors/NguyenAnhNhat.eps>
 (epstopdf)                    date: 2024-10-19 14:33:35
@@ -1350,17 +1370,17 @@ Package epstopdf Info: Source file: <authors/NguyenAnhNhat.eps>
 (epstopdf)                    size: 16371 bytes
 (epstopdf)             Command: <repstopdf --outfile=authors/NguyenAnhNhat-eps-
 converted-to.pdf authors/NguyenAnhNhat.eps>
-(epstopdf)             \includegraphics on input line 96.
+(epstopdf)             \includegraphics on input line 97.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./authors/NguyenAnhNhat-eps-converted-to.pdf): P
 DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<authors/NguyenAnhNhat-eps-converted-to.pdf, id=138, 118.4425pt x 173.64874pt>
+<authors/NguyenAnhNhat-eps-converted-to.pdf, id=141, 118.4425pt x 173.64874pt>
 File: authors/NguyenAnhNhat-eps-converted-to.pdf Graphic file (type pdf)
 <use authors/NguyenAnhNhat-eps-converted-to.pdf>
 Package pdftex.def Info: authors/NguyenAnhNhat-eps-converted-to.pdf  used on in
-put line 96.
+put line 97.
 (pdftex.def)             Requested size: 61.61935pt x 90.34026pt.
 Package epstopdf Info: Source file: <authors/NguyenAnhNhat.eps>
 (epstopdf)                    date: 2024-10-19 14:33:35
@@ -1371,25 +1391,79 @@ Package epstopdf Info: Source file: <authors/NguyenAnhNhat.eps>
 (epstopdf)                    size: 16371 bytes
 (epstopdf)             Command: <repstopdf --outfile=authors/NguyenAnhNhat-eps-
 converted-to.pdf authors/NguyenAnhNhat.eps>
-(epstopdf)             \includegraphics on input line 96.
+(epstopdf)             \includegraphics on input line 97.
 Package epstopdf Info: Output file is already uptodate.
 File: authors/NguyenAnhNhat-eps-converted-to.pdf Graphic file (type pdf)
 <use authors/NguyenAnhNhat-eps-converted-to.pdf>
 Package pdftex.def Info: authors/NguyenAnhNhat-eps-converted-to.pdf  used on in
-put line 96.
+put line 97.
 (pdftex.def)             Requested size: 61.61935pt x 90.34026pt.
-<authors/TranDucThanh.png, id=141, 1724.4425pt x 2740.2375pt>
+<authors/TranDucThanh.png, id=144, 1724.4425pt x 2740.2375pt>
 File: authors/TranDucThanh.png Graphic file (type png)
 <use authors/TranDucThanh.png>
-Package pdftex.def Info: authors/TranDucThanh.png  used on input line 99.
+Package pdftex.def Info: authors/TranDucThanh.png  used on input line 100.
 (pdftex.def)             Requested size: 56.83572pt x 90.31522pt.
 File: authors/TranDucThanh.png Graphic file (type png)
 <use authors/TranDucThanh.png>
-Package pdftex.def Info: authors/TranDucThanh.png  used on input line 99.
+Package pdftex.def Info: authors/TranDucThanh.png  used on input line 100.
 (pdftex.def)             Requested size: 56.83572pt x 90.31522pt.
+<authors/DuongVanHiep.png, id=147, 336.25626pt x 340.27126pt>
+File: authors/DuongVanHiep.png Graphic file (type png)
+<use authors/DuongVanHiep.png>
+Package pdftex.def Info: authors/DuongVanHiep.png  used on input line 103.
+(pdftex.def)             Requested size: 72.26802pt x 73.13092pt.
+File: authors/DuongVanHiep.png Graphic file (type png)
+<use authors/DuongVanHiep.png>
+Package pdftex.def Info: authors/DuongVanHiep.png  used on input line 103.
+(pdftex.def)             Requested size: 72.26802pt x 73.13092pt.
+<authors/MaiAnhTruong.jpg, id=150, 355.3275pt x 473.77pt>
+File: authors/MaiAnhTruong.jpg Graphic file (type jpg)
+<use authors/MaiAnhTruong.jpg>
+Package pdftex.def Info: authors/MaiAnhTruong.jpg  used on input line 106.
+(pdftex.def)             Requested size: 67.75148pt x 90.33531pt.
+File: authors/MaiAnhTruong.jpg Graphic file (type jpg)
+<use authors/MaiAnhTruong.jpg>
+Package pdftex.def Info: authors/MaiAnhTruong.jpg  used on input line 106.
+(pdftex.def)             Requested size: 67.75148pt x 90.33531pt.
+<authors/PhamDucLong.jpg, id=153, 947.54pt x 1423.3175pt>
+File: authors/PhamDucLong.jpg Graphic file (type jpg)
+<use authors/PhamDucLong.jpg>
+Package pdftex.def Info: authors/PhamDucLong.jpg  used on input line 109.
+(pdftex.def)             Requested size: 60.13197pt x 90.32536pt.
+File: authors/PhamDucLong.jpg Graphic file (type jpg)
+<use authors/PhamDucLong.jpg>
+Package pdftex.def Info: authors/PhamDucLong.jpg  used on input line 109.
+(pdftex.def)             Requested size: 60.13197pt x 90.32536pt.
+<authors/PhanKhanhToan.jpg, id=156, 1456.44125pt x 1947.275pt>
+File: authors/PhanKhanhToan.jpg Graphic file (type jpg)
+<use authors/PhanKhanhToan.jpg>
+Package pdftex.def Info: authors/PhanKhanhToan.jpg  used on input line 112.
+(pdftex.def)             Requested size: 67.55936pt x 90.32747pt.
+File: authors/PhanKhanhToan.jpg Graphic file (type jpg)
+<use authors/PhanKhanhToan.jpg>
+Package pdftex.def Info: authors/PhanKhanhToan.jpg  used on input line 112.
+(pdftex.def)             Requested size: 67.55936pt x 90.32747pt.
+<authors/DoMinhQuang.jpg, id=159, 280.04625pt x 413.545pt>
+File: authors/DoMinhQuang.jpg Graphic file (type jpg)
+<use authors/DoMinhQuang.jpg>
+Package pdftex.def Info: authors/DoMinhQuang.jpg  used on input line 115.
+(pdftex.def)             Requested size: 61.1745pt x 90.33653pt.
+File: authors/DoMinhQuang.jpg Graphic file (type jpg)
+<use authors/DoMinhQuang.jpg>
+Package pdftex.def Info: authors/DoMinhQuang.jpg  used on input line 115.
+(pdftex.def)             Requested size: 61.1745pt x 90.33653pt.
+<authors/TaHuuAnhDuong.jpg, id=162, 1417.295pt x 2055.68pt>
+File: authors/TaHuuAnhDuong.jpg Graphic file (type jpg)
+<use authors/TaHuuAnhDuong.jpg>
+Package pdftex.def Info: authors/TaHuuAnhDuong.jpg  used on input line 118.
+(pdftex.def)             Requested size: 62.28331pt x 90.33728pt.
+File: authors/TaHuuAnhDuong.jpg Graphic file (type jpg)
+<use authors/TaHuuAnhDuong.jpg>
+Package pdftex.def Info: authors/TaHuuAnhDuong.jpg  used on input line 118.
+(pdftex.def)             Requested size: 62.28331pt x 90.33728pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 102.
+Package pdftex.def Info: notaglinelogo.png  used on input line 121.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1406,142 +1480,76 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[14 <./authors/DinhCuong.jpg> <./authors/prof_Tan.png> <./authors/NguyenAnhNhat
--eps-converted-to.pdf> <./authors/TranDucThanh.png>]
-<authors/DuongVanHiep.png, id=156, 336.25626pt x 340.27126pt>
-File: authors/DuongVanHiep.png Graphic file (type png)
-<use authors/DuongVanHiep.png>
-Package pdftex.def Info: authors/DuongVanHiep.png  used on input line 102.
-(pdftex.def)             Requested size: 72.26802pt x 73.13092pt.
-File: authors/DuongVanHiep.png Graphic file (type png)
-<use authors/DuongVanHiep.png>
-Package pdftex.def Info: authors/DuongVanHiep.png  used on input line 102.
-(pdftex.def)             Requested size: 72.26802pt x 73.13092pt.
-<authors/MaiAnhTruong.jpg, id=159, 355.3275pt x 473.77pt>
-File: authors/MaiAnhTruong.jpg Graphic file (type jpg)
-<use authors/MaiAnhTruong.jpg>
-Package pdftex.def Info: authors/MaiAnhTruong.jpg  used on input line 105.
-(pdftex.def)             Requested size: 67.75148pt x 90.33531pt.
-File: authors/MaiAnhTruong.jpg Graphic file (type jpg)
-<use authors/MaiAnhTruong.jpg>
-Package pdftex.def Info: authors/MaiAnhTruong.jpg  used on input line 105.
-(pdftex.def)             Requested size: 67.75148pt x 90.33531pt.
-<authors/PhamDucLong.jpg, id=162, 947.54pt x 1423.3175pt>
-File: authors/PhamDucLong.jpg Graphic file (type jpg)
-<use authors/PhamDucLong.jpg>
-Package pdftex.def Info: authors/PhamDucLong.jpg  used on input line 108.
-(pdftex.def)             Requested size: 60.13197pt x 90.32536pt.
-File: authors/PhamDucLong.jpg Graphic file (type jpg)
-<use authors/PhamDucLong.jpg>
-Package pdftex.def Info: authors/PhamDucLong.jpg  used on input line 108.
-(pdftex.def)             Requested size: 60.13197pt x 90.32536pt.
-<authors/PhanKhanhToan.jpg, id=165, 1456.44125pt x 1947.275pt>
-File: authors/PhanKhanhToan.jpg Graphic file (type jpg)
-<use authors/PhanKhanhToan.jpg>
-Package pdftex.def Info: authors/PhanKhanhToan.jpg  used on input line 111.
-(pdftex.def)             Requested size: 67.55936pt x 90.32747pt.
-File: authors/PhanKhanhToan.jpg Graphic file (type jpg)
-<use authors/PhanKhanhToan.jpg>
-Package pdftex.def Info: authors/PhanKhanhToan.jpg  used on input line 111.
-(pdftex.def)             Requested size: 67.55936pt x 90.32747pt.
-<authors/DoMinhQuang.jpg, id=168, 280.04625pt x 413.545pt>
-File: authors/DoMinhQuang.jpg Graphic file (type jpg)
-<use authors/DoMinhQuang.jpg>
-Package pdftex.def Info: authors/DoMinhQuang.jpg  used on input line 114.
-(pdftex.def)             Requested size: 61.1745pt x 90.33653pt.
-File: authors/DoMinhQuang.jpg Graphic file (type jpg)
-<use authors/DoMinhQuang.jpg>
-Package pdftex.def Info: authors/DoMinhQuang.jpg  used on input line 114.
-(pdftex.def)             Requested size: 61.1745pt x 90.33653pt.
-<authors/TaHuuAnhDuong.jpg, id=171, 1417.295pt x 2055.68pt>
-File: authors/TaHuuAnhDuong.jpg Graphic file (type jpg)
-<use authors/TaHuuAnhDuong.jpg>
-Package pdftex.def Info: authors/TaHuuAnhDuong.jpg  used on input line 117.
-(pdftex.def)             Requested size: 62.28331pt x 90.33728pt.
-File: authors/TaHuuAnhDuong.jpg Graphic file (type jpg)
-<use authors/TaHuuAnhDuong.jpg>
-Package pdftex.def Info: authors/TaHuuAnhDuong.jpg  used on input line 117.
-(pdftex.def)             Requested size: 62.28331pt x 90.33728pt.
-<authors/HuynhTuanMinh.jpg, id=174, 871.255pt x 1284.8pt>
+[15 <./authors/DinhCuong.jpg> <./authors/prof_Tan.png> <./authors/NguyenAnhNhat
+-eps-converted-to.pdf> <./authors/TranDucThanh.png> <./authors/DuongVanHiep.png
+> <./authors/MaiAnhTruong.jpg> <./authors/PhamDucLong.jpg> <./authors/PhanKhanh
+Toan.jpg> <./authors/DoMinhQuang.jpg> <./authors/TaHuuAnhDuong.jpg>]
+<authors/HuynhTuanMinh.jpg, id=184, 871.255pt x 1284.8pt>
 File: authors/HuynhTuanMinh.jpg Graphic file (type jpg)
 <use authors/HuynhTuanMinh.jpg>
-Package pdftex.def Info: authors/HuynhTuanMinh.jpg  used on input line 120.
+Package pdftex.def Info: authors/HuynhTuanMinh.jpg  used on input line 121.
 (pdftex.def)             Requested size: 61.25996pt x 90.33728pt.
 File: authors/HuynhTuanMinh.jpg Graphic file (type jpg)
 <use authors/HuynhTuanMinh.jpg>
-Package pdftex.def Info: authors/HuynhTuanMinh.jpg  used on input line 120.
+Package pdftex.def Info: authors/HuynhTuanMinh.jpg  used on input line 121.
 (pdftex.def)             Requested size: 61.25996pt x 90.33728pt.
-<authors/BuiSonAnh.jpg, id=177, 602.25pt x 602.25pt>
+<authors/BuiSonAnh.jpg, id=187, 602.25pt x 602.25pt>
 File: authors/BuiSonAnh.jpg Graphic file (type jpg)
 <use authors/BuiSonAnh.jpg>
-Package pdftex.def Info: authors/BuiSonAnh.jpg  used on input line 123.
+Package pdftex.def Info: authors/BuiSonAnh.jpg  used on input line 124.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
 File: authors/BuiSonAnh.jpg Graphic file (type jpg)
 <use authors/BuiSonAnh.jpg>
-Package pdftex.def Info: authors/BuiSonAnh.jpg  used on input line 123.
+Package pdftex.def Info: authors/BuiSonAnh.jpg  used on input line 124.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
-<authors/NguyenDucManh.PNG, id=180, 218.0145pt x 256.5585pt>
+<authors/NguyenDucManh.PNG, id=190, 218.0145pt x 256.5585pt>
 File: authors/NguyenDucManh.PNG Graphic file (type png)
 <use authors/NguyenDucManh.PNG>
-Package pdftex.def Info: authors/NguyenDucManh.PNG  used on input line 126.
+Package pdftex.def Info: authors/NguyenDucManh.PNG  used on input line 127.
 (pdftex.def)             Requested size: 72.271pt x 85.0482pt.
 File: authors/NguyenDucManh.PNG Graphic file (type png)
 <use authors/NguyenDucManh.PNG>
-Package pdftex.def Info: authors/NguyenDucManh.PNG  used on input line 126.
+Package pdftex.def Info: authors/NguyenDucManh.PNG  used on input line 127.
 (pdftex.def)             Requested size: 72.271pt x 85.0482pt.
-<authors/TrinhVietAnh.jpg, id=183, 113.223pt x 169.8345pt>
+<authors/TrinhVietAnh.jpg, id=193, 113.223pt x 169.8345pt>
 File: authors/TrinhVietAnh.jpg Graphic file (type jpg)
 <use authors/TrinhVietAnh.jpg>
-Package pdftex.def Info: authors/TrinhVietAnh.jpg  used on input line 129.
+Package pdftex.def Info: authors/TrinhVietAnh.jpg  used on input line 130.
 (pdftex.def)             Requested size: 60.22557pt x 90.33836pt.
 File: authors/TrinhVietAnh.jpg Graphic file (type jpg)
 <use authors/TrinhVietAnh.jpg>
-Package pdftex.def Info: authors/TrinhVietAnh.jpg  used on input line 129.
+Package pdftex.def Info: authors/TrinhVietAnh.jpg  used on input line 130.
 (pdftex.def)             Requested size: 60.22557pt x 90.33836pt.
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 132.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[15 <./authors/DuongVanHiep.png> <./authors/MaiAnhTruong.jpg> <./authors/PhamDu
-cLong.jpg> <./authors/PhanKhanhToan.jpg> <./authors/DoMinhQuang.jpg> <./authors
-/TaHuuAnhDuong.jpg> <./authors/HuynhTuanMinh.jpg> <./authors/BuiSonAnh.jpg> <./
-authors/NguyenDucManh.PNG> <./authors/TrinhVietAnh.jpg>]
-<authors/TranKhanhDuong.jpg, id=201, 1276.77pt x 1370.87157pt>
+<authors/TranKhanhDuong.jpg, id=196, 1276.77pt x 1370.87157pt>
 File: authors/TranKhanhDuong.jpg Graphic file (type jpg)
 <use authors/TranKhanhDuong.jpg>
-Package pdftex.def Info: authors/TranKhanhDuong.jpg  used on input line 132.
+Package pdftex.def Info: authors/TranKhanhDuong.jpg  used on input line 133.
 (pdftex.def)             Requested size: 72.25842pt x 77.58408pt.
 File: authors/TranKhanhDuong.jpg Graphic file (type jpg)
 <use authors/TranKhanhDuong.jpg>
-Package pdftex.def Info: authors/TranKhanhDuong.jpg  used on input line 132.
+Package pdftex.def Info: authors/TranKhanhDuong.jpg  used on input line 133.
 (pdftex.def)             Requested size: 72.25842pt x 77.58408pt.
 
-Underfull \hbox (badness 1983) in paragraph at lines 132--133
+Underfull \hbox (badness 1983) in paragraph at lines 133--134
 \T1/times/n/n/8 gree in In-for-ma-tion Tech-nol-ogy at Green-wich
  []
 
+<authors/ThuUyenNguyen.png, id=199, 474.27188pt x 639.89063pt>
+File: authors/ThuUyenNguyen.png Graphic file (type png)
+<use authors/ThuUyenNguyen.png>
+Package pdftex.def Info: authors/ThuUyenNguyen.png  used on input line 136.
+(pdftex.def)             Requested size: 66.95483pt x 90.33589pt.
+File: authors/ThuUyenNguyen.png Graphic file (type png)
+<use authors/ThuUyenNguyen.png>
+Package pdftex.def Info: authors/ThuUyenNguyen.png  used on input line 136.
+(pdftex.def)             Requested size: 66.95483pt x 90.33589pt.
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 135.
+Package pdftex.def Info: bullet.png  used on input line 139.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 137.
+Package pdftex.def Info: notaglinelogo.png  used on input line 141.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1558,21 +1566,24 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[16
-
- <./authors/TranKhanhDuong.jpg>] (./access.aux)
+[16 <./authors/HuynhTuanMinh.jpg> <./authors/BuiSonAnh.jpg> <./authors/NguyenDu
+cManh.PNG> <./authors/TrinhVietAnh.jpg> <./authors/TranKhanhDuong.jpg> <./autho
+rs/ThuUyenNguyen.png>] (./access.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7571 strings out of 492982
- 119000 string characters out of 6134896
- 229963 words of memory out of 5000000
- 10888 multiletter control sequences out of 15000+600000
+ 7587 strings out of 492982
+ 119337 string characters out of 6134896
+ 229007 words of memory out of 5000000
+ 10903 multiletter control sequences out of 15000+600000
  84285 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,15n,92p,2648b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,15n,92p,2748b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
@@ -1589,10 +1600,10 @@ b><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><./t1-formata-italic.pfb>
 <./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb><./t1-formata-regular.p
 fb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb><./t1-times-italic.pfb
 ><./t1-times.pfb>
-Output written on access.pdf (16 pages, 17206185 bytes).
+Output written on access.pdf (16 pages, 17840260 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 285 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 514 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
